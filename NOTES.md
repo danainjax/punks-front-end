@@ -1,5 +1,6 @@
 Project build notes
 
+
 1. Diagram the 3 fetch calls needed
 2. Decide on a second model, (likes, comments, etc. - pick 1 to start)
 3. Code the second model to implement the has-many relationship
