@@ -7,6 +7,11 @@ h1 {
     text-align: center;
 }
 
+#cryptopunks {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
 /* box shadow and card css attributed to https://www.w3schools.com/howto/howto_css_cards.asp */
 .punk-card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
