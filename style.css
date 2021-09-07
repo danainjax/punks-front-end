@@ -36,3 +36,8 @@ img {
     
     border-radius: 10px 10px 10px 10px;
   }
+
+  .likes {
+      text-align: right;
+      margin-right: 30px;
+  }

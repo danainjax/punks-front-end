@@ -11,9 +11,11 @@ class Punk {
         punksDiv.innerHTML += `
         <div class="punk-card" data-id=${id}>
           <img src=${image} alt="punkImage"/>
+          <p class="likes"> ♡ </p>
+          <p class="punk-number"> Punk number ${parseInt(id + 99)}</p>
           <p class="punktype">${punktype}</p>
           <p class="accessories">${accessories}
-          <p class="punk-number"> Punk number ${parseInt(id + 99)}</p>
+          
         </div>`
       }
 
