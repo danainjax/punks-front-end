@@ -21,31 +21,37 @@ class Punk {
         
     }
 
-    addLike() {
-        console.log('we are hittinhg the addLike')
-        const likes = document.getElementsByClassName(".likes")
-            likes.forEach(like => {
-                console.log(like)
-                like.addEventListener('click', (e) => {
-                e.preventDefault()
-                console.log(e.target)
-                console.log(e.target.dataset.id)
-            })
-          })
-    }
+    
   
      static getPunks() {
 
-        return fetch('http://localhost:3000/punks/?_limit=10')
+        return fetch('http://localhost:3000/punks')
         .then(response => response.json())
         .then(punks => {
             punks.forEach(punk => new Punk(punk))
             console.log(punks)
             this.all.forEach(punk => {
+                // console.log(punk)
                 punk.renderCard()
-                // punk.addLike()
+                punk.addLike()
                     })
-        
+                   
                         })
+            
         }
+
+         addLike() {
+            const likes = document.querySelectorAll('.likes')
+            for (const like of likes) {
+                like.addEventListener('click', (e) => {
+                    console.log(e.target.dataset.id)
+                    if (e.target.innerText == "♡") {
+                        e.target.innerText = "🖤"
+                } else {
+                    e.target.innerText = "♡"
+                }
+                })
+        }
+    }
+
 }
