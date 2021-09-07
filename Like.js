@@ -6,6 +6,7 @@ class Like {
 
 
     static addLike() {
+        console.log('we are hittinhg the addLike')
         const likes = document.getElementsByClassName(".likes")
             likes.forEach(like => {
                 console.log(like)

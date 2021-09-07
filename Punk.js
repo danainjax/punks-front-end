@@ -18,10 +18,21 @@ class Punk {
           
         </div>`
 
-    
+        
     }
 
-
+    addLike() {
+        console.log('we are hittinhg the addLike')
+        const likes = document.getElementsByClassName(".likes")
+            likes.forEach(like => {
+                console.log(like)
+                like.addEventListener('click', (e) => {
+                e.preventDefault()
+                console.log(e.target)
+                console.log(e.target.dataset.id)
+            })
+          })
+    }
   
      static getPunks() {
 
@@ -30,19 +41,11 @@ class Punk {
         .then(punks => {
             punks.forEach(punk => new Punk(punk))
             console.log(punks)
-            this.all.forEach(punk => punk.renderCard())
-            
-        })
-        }
+            this.all.forEach(punk => {
+                punk.renderCard()
+                // punk.addLike()
+                    })
         
-    
-
-
-
-
-
-
-
-
-
+                        })
+        }
 }
