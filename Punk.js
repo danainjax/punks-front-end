@@ -13,7 +13,7 @@ class Punk {
           <img src=${image} alt="punkImage"/>
           <p class="punktype">${punktype}</p>
           <p class="accessories">${accessories}
-          <p class="punk-number"> Put the punk number or identifier here</p>
+          <p class="punk-number"> Punk number ${parseInt(id + 99)}</p>
         </div>`
       }
 

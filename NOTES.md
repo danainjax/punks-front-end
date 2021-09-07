@@ -6,6 +6,7 @@ Project build notes
 3. Code the second model to implement the has-many relationship
 4. Build an adpater/service class to handle the api calls.
 5. Hit MVP asap, then refactor and branch to add each new feature. One at a time.
+6. Add a Navbar
 
 Requirements:
 

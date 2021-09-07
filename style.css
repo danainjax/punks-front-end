@@ -1,5 +1,5 @@
 body {
-    font-family: Montserrat, sans-serif;
+    font-family: Roboto Mono, sans-serif;
     /* background-color: rgb(192, 192, 192); */
 }
 
@@ -7,6 +7,9 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    text-align: right;
+}
 #cryptopunks {
     display: flex;
     flex-wrap: wrap-reverse;
