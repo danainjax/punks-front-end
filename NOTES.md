@@ -2,6 +2,13 @@ Project build notes
 
 
 1. Diagram the 3 fetch calls needed
+
+3. C - create a new comment, like, or sale, create a new user
+1. R - Read, Punks displaying on page, fetch to localhost:3000/punks/index
+2. R - Read, Punks show page, fetch to localhost:3000/punks/id
+U - update a comment, like, or sale?
+D - delete a comment, like
+
 2. Decide on a second model, (likes, comments, etc. - pick 1 to start)
     User - Log In/password needed?
     Likes
