@@ -34,10 +34,24 @@ class Punk {
                 // console.log(punk)
                 punk.renderCard()
                 punk.addLike()
+                punk.viewComments()
                     })
                    
                         })
             
+        }
+
+        viewComments() {
+            const punkCards = document.querySelectorAll('.punk-card')
+            for (const card of punkCards) {
+                card.addEventListener('click', (e) => {
+                    
+                    console.log(e.target.closest('div').dataset.id)
+                    
+                    
+                })
+            }
+
         }
 
          addLike() {
