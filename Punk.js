@@ -10,11 +10,21 @@ class Punk {
         const { punktype, accessories, image,  id } = this.data
         punksDiv.innerHTML += `
         <div class="punk-card" data-id=${id}>
-          <img src=${image} alt="punkImage"/>
-          <p class="likes" id="likes" data-id=${id}> ♡ </p>
-          <p class="punk-number"> Punk number ${parseInt(id + 99)}</p>
-          <p class="punktype">${punktype}</p>
-          <p class="accessories">${accessories}
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src=${image} alt="punkImage"/>
+                        <p class="likes" id="likes" data-id=${id}> ♡ </p>
+                        <p class="punk-number"> Punk number ${parseInt(id + 99)}</p>
+                        <p class="punktype">${punktype}</p>
+                        <p class="accessories">${accessories}
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>PUNK NUMBER ${parseInt(id + 99)}</h1>
+                        <p> Comments </p>
+                    </div>
+                </div>
+            </div>
           
         </div>`
 
