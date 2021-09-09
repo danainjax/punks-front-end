@@ -2,4 +2,4 @@
 
 Front end for crypto punks vanilla JS application
 
-![CryptoPunks](./images/allPunks.png)
+![CryptoPunks](./assets/images/allPunks.png)
