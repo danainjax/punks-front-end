@@ -5,17 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/style.css" />
-    <script src="services/ApiService.js" defer></script>
+    <script src="./src/services/ApiService.js" defer></script>
     <script src="./src/components/Punk.js" defer></script>
     <script src="./src/index.js" defer></script>
+    
+    
+   
     <script src="./src/components/Like.js" defer></script>
     <script src="./src/components/Comment.js" defer></script>
     <title>punks</title>
   </head>
   <body>
     <h1>Punks</h1>
-    <h2>Log In</h2>
-   
-    <div id="cryptopunks"></div>
+    <button class="log-in">Log In</button>
+    <div id="main">
+      <div id="cryptopunks"></div>
+    </div>
   </body>
 </html>

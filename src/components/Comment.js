@@ -10,10 +10,9 @@ class Comment {
     for (const card of punkCards) {
       card.addEventListener("click", (e) => {
         e.preventDefault()
-        console.log(e.target.closest(".punk-card").dataset.id);
-        const commentsP = e.target.closest("button");
+        const commentsContainer = document.querySelector('#comments-container');
         const commentDiv = document.createElement("div");
-        commentDiv.innerHTML += `<form>
+        commentDiv.innerHTML = `<form>
                     <label for="comment">Comment:</label><br>
                     <input type="textarea" id="comment" name="comment"><br>
                     <label for="username">User name:</label><br>
@@ -21,7 +20,8 @@ class Comment {
                     <input type="submit" value="Submit">
                 </form>
                 `;
-        commentsP.append(commentDiv);
+        commentsContainer.append(commentDiv);
+        // Punk.showPunk()
       });
     }
   }
