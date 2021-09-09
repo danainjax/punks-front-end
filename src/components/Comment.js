@@ -9,12 +9,13 @@ class Comment {
     const punkCards = document.querySelectorAll(".punk-card");
     for (const card of punkCards) {
       card.addEventListener("click", (e) => {
+        e.preventDefault()
         console.log(e.target.closest(".punk-card").dataset.id);
-        const commentsP = e.target.closest("p");
+        const commentsP = e.target.closest("button");
         const commentDiv = document.createElement("div");
         commentDiv.innerHTML += `<form>
                     <label for="comment">Comment:</label><br>
-                    <input type="text" id="comment" name="comment"><br>
+                    <input type="textarea" id="comment" name="comment"><br>
                     <label for="username">User name:</label><br>
                     <input type="text" id="username" name="username">
                     <input type="submit" value="Submit">

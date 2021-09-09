@@ -1,34 +1,47 @@
 Project build notes
 
 
-1. Diagram the 3 fetch calls needed
+Fetch calls:
 
-3. C - create a new comment, like, or sale, create a new user
-1. R - Read, Punks displaying on page, fetch to localhost:3000/punks/index
-2. R - Read, Punks show page, fetch to localhost:3000/punks/id
-U - update a comment, like, or sale?
-D - delete a comment, like
 
-2. Decide on a second model, (likes, comments, etc. - pick 1 to start)
-    User - Log In/password needed?
-    Likes
-    Comments
-    Buy
-    Sell
-    Trade
-3. Code the second model to implement the has-many relationship
-4. Build an adpater/service class to handle the api calls.
-5. Hit MVP asap, then refactor and branch to add each new feature. One at a time.
-6. Add a Navbar
-7. Add API data to show current crypto prices, ETH, bitcoin, etc with graphic and #
-8. Add info pages, to show what CryptoPunks are and why they are important, define what a NFT is, etc. (Christie's article, NY Times article)
+[X] 1. R - Read, Punks displaying on page, fetch to localhost:3000/punks/index
+
+    2. C - create a new comment
+    Create a comment object on submit of button, pass the object to the fetch POST to the backend, then show the updated Punk card with comments
+
+    Create a User
+
+    Create a like 
+
+    Create a Contract/Sale
+
+    3. R - Read, Punks show page, fetch to localhost:3000/punks/id
+    Coded the backend so that the json is rendered to punks/id
+    Need to display the punk in a modal or some other manner so it takes center-stage
+
+    4. U - update a comment, like, or sale?
+    5. D - delete a comment, like
+
+B. Decide on a second model, (likes, comments, etc. - pick 1 to start)
+    a.  ***Comments - currently working on Comments
+
+    b. User 
+    c. Like
+    d. Buy/Sell/Trade/Contract
+    
+
+C. Build an adpater/service class to handle the api calls.
+D. Hit MVP asap, then refactor and branch to add each new feature. One at a time.
+E. Add a Navbar
+F. Add API data to show current crypto prices, ETH, bitcoin, etc with graphic and #
+G. Add info pages, to show what CryptoPunks are and why they are important, define what a NFT is, etc. (Christie's article, NY Times article)
 
 
 HTML
-1. Modal
-2. Flip card
-3. Background animation
-4. Nav bar
+    1. Modal
+    2. Flip card
+    3. Background animation
+    4. Nav bar
 
 Requirements:
 

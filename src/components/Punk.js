@@ -7,7 +7,9 @@ class Punk {
   }
 
   renderCard = () => {
-    const { punktype, accessories, image, id } = this.data;
+    const { punktype, accessories, image, id} = this.data;
+    // const {text} = this.data.comments
+    // console.log(this.data.comments)
     punksDiv.innerHTML += `
         <div class="punk-card" data-id=${id}>
             <div class="flip-card">
@@ -24,8 +26,8 @@ class Punk {
                     <div class="flip-card-back">
                         <h1>PUNK NUMBER ${parseInt(id + 99)}</h1>
                         <p> Comments </p>
-                        <ul> Comment.all <ul>
-                        <p> Add a comment </p>
+                        <ul>Place commments here<ul>
+                        <button id="add-comment" data-id=${id}> Add a comment </button>
 
                     </div>
                 </div>
