@@ -13,3 +13,9 @@ login.addEventListener('click', (e) => {
 function handleSubmit() {
     console.log('log in here')
 }
+
+function clear() {
+    
+    punksDiv.style.display = 'none'
+   
+}

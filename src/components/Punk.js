@@ -1,36 +1,41 @@
 class Punk {
   static all = [];
   constructor(data) {
-    this.data = data;
+    this.id = data.id;
+    this.punktype = data.punktype;
+    this.image = data.image;
+    this.accessories = JSON.parse(data.accessories)    
     this.constructor.all.push(this);
+   
   }
 
   renderCard = () => {
-    const { punktype, accessories, image, id} = this.data;
     punksDiv.innerHTML += `
-        <div class="punk-card" data-id=${id}>
+        <div class="punk-card" data-id=${this.id}>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src=${image} alt="punkImage"/>
-                        <p class="likes" id="likes" data-id=${id}> ♡ </p>
+                        <img src=${this.image} alt="punkImage"/>
+                        <p class="likes" id="likes" data-id=${this.id}> ♡ </p>
                         <p class="punk-number"> Punk number ${parseInt(
-                          id + 99
+                          this.id + 99
                         )}</p>
-                        <p class="punktype">${punktype}</p>
-                        <p class="accessories">${accessories}
+                        <p class="punktype">${this.punktype}</p>
+                        <p class="accessories">${this.accessories}
                     </div>
                     <div class="flip-card-back">
-                        <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(id + 99)}</h1>
+                        <h1 id="punk-number" dataset-id= ${this.id}>PUNK NUMBER ${parseInt(this.id + 99)}</h1>
                         <p id="comments-container"> Comments </p>
                       
-                        <button id="add-comment" data-id=${id}>Add a comment</button>
+                        <button id="add-comment" data-id=${this.id}>Add a comment</button>
 
                     </div>
                 </div>
             </div>
           
         </div>`;
+
+    
   };
 
   static getPunks() {
@@ -45,15 +50,17 @@ class Punk {
       });
   }
 
-  // static showPunk() {
-  //   const punkNumber = document.querySelector('#comments-container')
-  //   console.log(punkNumber)
-  //   const id = punkNumber.dataset.id 
-  //   punkNumber.addEventListener('click', (e) => {
-  //     api.soloPunk(id).then(console.log)
-  //   })
+  static showPunk(e) {
+    console.log(e.target)
+    clear()
+    const id = e.target.dataset.id
+    
+        api.soloPunk(id).then(console.log)
+      }
+    
    
-  // }
+  
+
 
   addLike() {
     const likes = document.querySelectorAll(".likes");
