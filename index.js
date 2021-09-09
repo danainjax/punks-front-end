@@ -1,6 +1,3 @@
+const punksDiv = document.getElementById("cryptopunks");
 
-const punksDiv = document.getElementById('cryptopunks')
-
-
-Punk.getPunks()
-
+Punk.getPunks();
