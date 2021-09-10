@@ -11,6 +11,7 @@ class Punk {
 
   renderCard = () => {
     punksDiv.innerHTML += `
+      <div class="punks-container"> 
         <div class="punk-card" data-id=${this.id}>
             <div class="flip-card">
                 <div class="flip-card-inner">
@@ -33,7 +34,8 @@ class Punk {
                 </div>
             </div>
           
-        </div>`;
+        </div>
+      </div>`;
 
     
   };
@@ -44,21 +46,40 @@ class Punk {
         this.all.forEach((punk) => {
           punk.renderCard();
           punk.addLike();
+          punksDiv.addEventListener('click', this.handleIndexClick)
+          })
+          // punksDiv.addEventListener('click', this.handleIndexClick)
           
           Comment.viewComments();
         });
-      });
-  }
+      };
+  
 
   static showPunk(e) {
-    console.log(e.target)
-    clear()
-    const id = e.target.dataset.id
+    // console.log(e.target.closest(''))
+    // clear()
+    // // const id = e.target.dataset.id
+    // // console.log(id)
+    // api.soloPunk(e).then((console.log))
+        
+        
+      };
     
-        api.soloPunk(id).then(console.log)
-      }
+        // api.soloPunk(id).then(console.log)
+      
     
-   
+   static handleIndexClick = (e) => {
+     console.log(e.target)
+     if(e.target.tagName === "IMG" || e.target.classList.contains('punk-number')){
+       console.log(e.target)
+       console.log(e.target.closest('.punk-card'))
+       console.log(e.target.closest('.punk-card').dataset.id)
+       const id = e.target.closest('.punk-card').dataset.id
+       console.log(this.find(id))
+     }
+   }
+
+   static find = (id) => this.all.find(punk => punk.id == id)
   
 
 
