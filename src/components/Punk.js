@@ -41,6 +41,7 @@ class Punk {
   };
 
   static getPunks() {
+    punksDiv.innerHTML = ""
     api.fetchPunks().then((punks) => {
         punks.forEach((punk) => new Punk(punk));
         this.all.forEach((punk) => {
@@ -48,13 +49,12 @@ class Punk {
           punk.addLike();
           punksDiv.addEventListener('click', this.handleIndexClick)
           })
-          // punksDiv.addEventListener('click', this.handleIndexClick)
-          
           // Comment.viewComments();
         });
       };
  
    static handleIndexClick = (e) => {
+     e.preventDefault()
      if(e.target.tagName === "IMG" || e.target.classList.contains('punk-number')){
        const id = e.target.closest('.punk-card').dataset.id
        this.find(id).renderShow()
@@ -65,14 +65,19 @@ class Punk {
   
   renderShow = () => {
     console.log(this)
-    document.getElementById('main').innerHTML = `
+    punksDiv.innerHTML = `
     <div class="show">
       <img src=${this.image} alt="punk" />
       <h1> Punk number ${parseInt(this.id) + 99}</h1>
       <p class="punktype">${this.punktype}</p>
       <p class="accessories">${this.accessories}
+      <button id="back">Go Back</button>
     `
-    
+    const back = document.getElementById('back')
+    back.addEventListener('click', (e) => {
+      e.preventDefault()
+      Punk.getPunks()
+    })
     }
       
 
