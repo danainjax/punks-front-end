@@ -15,11 +15,11 @@ Fetch calls:
 
     Create a Contract/Sale
 
-    3. R - Read, Punks show page, fetch to localhost:3000/punks/id
+    3. R - Read, Find PunkByNumber, fetch to localhost:3000/punks/id
     Coded the backend so that the json is rendered to punks/id
-    Need to display the punk in a modal or some other manner so it takes center-stage
+    Send to show page. Create new punk if it does not exist in the database, render it, if it does.
 
-    4. U - update a comment, like, or sale?
+    4. U - update/edit a comment, like, or sale?
     5. D - delete a comment, like
 
 B. Decide on a second model, (likes, comments, etc. - pick 1 to start)
@@ -30,7 +30,8 @@ B. Decide on a second model, (likes, comments, etc. - pick 1 to start)
     d. Buy/Sell/Trade/Contract
     
 
-C. Build an adpater/service class to handle the api calls.
+[X] C. Build an adpater/service class to handle the api calls.
+    ApiService.js
 D. Hit MVP asap, then refactor and branch to add each new feature. One at a time.
 E. Add a Navbar
 F. Add API data to show current crypto prices, ETH, bitcoin, etc with graphic and #
