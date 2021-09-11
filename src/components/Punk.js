@@ -50,37 +50,31 @@ class Punk {
           })
           // punksDiv.addEventListener('click', this.handleIndexClick)
           
-          Comment.viewComments();
+          // Comment.viewComments();
         });
       };
-  
-
-  static showPunk(e) {
-    // console.log(e.target.closest(''))
-    // clear()
-    // // const id = e.target.dataset.id
-    // // console.log(id)
-    // api.soloPunk(e).then((console.log))
-        
-        
-      };
-    
-        // api.soloPunk(id).then(console.log)
-      
-    
+ 
    static handleIndexClick = (e) => {
-     console.log(e.target)
      if(e.target.tagName === "IMG" || e.target.classList.contains('punk-number')){
-       console.log(e.target)
-       console.log(e.target.closest('.punk-card'))
-       console.log(e.target.closest('.punk-card').dataset.id)
        const id = e.target.closest('.punk-card').dataset.id
-       console.log(this.find(id))
+       this.find(id).renderShow()
      }
    }
 
    static find = (id) => this.all.find(punk => punk.id == id)
   
+  renderShow = () => {
+    console.log(this)
+    document.getElementById('main').innerHTML = `
+    <div class="show">
+      <img src=${this.image} alt="punk" />
+      <h1> Punk number ${parseInt(this.id) + 99}</h1>
+      <p class="punktype">${this.punktype}</p>
+      <p class="accessories">${this.accessories}
+    `
+    
+    }
+      
 
 
   addLike() {

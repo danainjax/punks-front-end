@@ -21,7 +21,7 @@ class Comment {
                 </form>
                 `;
         commentsContainer.append(commentDiv);
-        Punk.showPunk(e)
+        // Punk.showPunk(e)
       });
     }
   }
