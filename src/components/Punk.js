@@ -67,9 +67,10 @@ class Punk {
     punksDiv.innerHTML = `
     <div class="show">
       <img src=${this.image} alt="punk" />
-      <h1> Punk number ${parseInt(this.id) + 99}</h1>
+      <h1 id="show" data-id =${this.id}> Punk number ${parseInt(this.id) + 99}</h1>
       <p class="punktype">${this.punktype}</p>
-      <p class="accessories">${this.accessories}
+      <p class="accessories">${this.accessories}</p>
+      <p class="comments">${this.comments}</p>
       <button id="comment">Add comment to wall</button>
       <button id="back">Go Back</button>
     `

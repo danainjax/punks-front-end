@@ -27,16 +27,34 @@ class Comment {
         </form>`;
        const showPage = document.querySelector('.show')
        showPage.append(commentDiv)
-       const commentForm = document.querySelector('form')
-       commentForm.addEventListener("submit", (e) => {
-         e.preventDefault()
-         console.log('shazam')
-       })
+       this.submitForm()
+       
+       }
         
-      }
-      
       
 
+      static submitForm() {
+        console.log(this)
+        const id = document.querySelector('#show').dataset.id
+        const commentForm = document.querySelector("#comment-form")
+        commentForm.addEventListener("click", (e) => {
+         e.preventDefault()
+         console.log(commentForm.comment.value)
+         const newComment = {
+           text: commentForm.comment.value,
+           punk_id: id
+
+          }
+          api.createComment(newComment).then(comment => {
+            new Comment(comment).renderComment()
+          })
+
+    }) 
+
+    }
+    renderComment = () => {
+      console.log("put comment here")
     }
   
 
+  }
