@@ -5,12 +5,11 @@ class Comment {
     this.constructor.all.push(this);
   }
 
-  static viewComments() {
-    const punkCards = document.querySelectorAll(".punk-card");
-    for (const card of punkCards) {
-      card.addEventListener("click", (e) => {
+  static addComment() {
+    const commentButton = document.querySelector("#comment");
+    console.log(commentButton)
+      commentButton.addEventListener("click", (e) => {
         e.preventDefault()
-        const commentsContainer = document.querySelector('#comments-container');
         const commentDiv = document.createElement("div");
         commentDiv.innerHTML = `<form>
                     <label for="comment">Comment:</label><br>
@@ -20,9 +19,12 @@ class Comment {
                     <input type="submit" value="Submit">
                 </form>
                 `;
-        commentsContainer.append(commentDiv);
-        // Punk.showPunk(e)
+       document.querySelector('.show').append(commentDiv);
+       
       });
     }
+
+
+
   }
-}
+

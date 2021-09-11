@@ -71,8 +71,10 @@ class Punk {
       <h1> Punk number ${parseInt(this.id) + 99}</h1>
       <p class="punktype">${this.punktype}</p>
       <p class="accessories">${this.accessories}
+      <button id="comment">Add comment to wall</button>
       <button id="back">Go Back</button>
     `
+    Comment.addComment()
     const back = document.getElementById('back')
     back.addEventListener('click', (e) => {
       e.preventDefault()
