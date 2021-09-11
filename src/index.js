@@ -5,14 +5,14 @@ const punksDiv = document.getElementById("cryptopunks");
 Punk.getPunks();
 const login = document.querySelector('.log-in')
 
-login.addEventListener('click', (e) => {
-    e.preventDefault()
-    handleSubmit()
-})
+// login.addEventListener('click', (e) => {
+//     e.preventDefault()
+//     handleSubmit()
+// })
 
-function handleSubmit() {
-    console.log('log in here')
-}
+// function handleSubmit() {
+//     console.log('log in here')
+// }
 
 function clear() {
     

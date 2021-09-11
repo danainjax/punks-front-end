@@ -49,7 +49,7 @@ class Punk {
           punk.addLike();
           punksDiv.addEventListener('click', this.handleIndexClick)
           })
-          // Comment.viewComments();
+    
         });
       };
  
@@ -64,7 +64,6 @@ class Punk {
    static find = (id) => this.all.find(punk => punk.id == id)
   
   renderShow = () => {
-    console.log(this)
     punksDiv.innerHTML = `
     <div class="show">
       <img src=${this.image} alt="punk" />
@@ -74,7 +73,7 @@ class Punk {
       <button id="comment">Add comment to wall</button>
       <button id="back">Go Back</button>
     `
-    Comment.addComment()
+    Comment.showForm()
     const back = document.getElementById('back')
     back.addEventListener('click', (e) => {
       e.preventDefault()

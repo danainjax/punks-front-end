@@ -5,26 +5,38 @@ class Comment {
     this.constructor.all.push(this);
   }
 
-  static addComment() {
+  static showForm() {
     const commentButton = document.querySelector("#comment");
-    console.log(commentButton)
       commentButton.addEventListener("click", (e) => {
         e.preventDefault()
-        const commentDiv = document.createElement("div");
-        commentDiv.innerHTML = `<form>
-                    <label for="comment">Comment:</label><br>
-                    <input type="textarea" id="comment" name="comment"><br>
-                    <label for="username">User name:</label><br>
-                    <input type="text" id="username" name="username">
-                    <input type="submit" value="Submit">
-                </form>
-                `;
-       document.querySelector('.show').append(commentDiv);
+        ;
+        this.commentHtml()
        
-      });
+      })
     }
 
+      static commentHtml =  () => {
+        const commentDiv = document.createElement("div")
+        commentDiv.innerHTML = 
+        `<form id="comment-form">
+            <label for="comment">Comment:</label><br>
+            <input type="text" id="comment" name="comment"><br>
+            <label for="username">User name:</label><br>
+            <input type="text" id="username" name="username">
+            <input type="submit" value="Submit Comment">
+        </form>`;
+       const showPage = document.querySelector('.show')
+       showPage.append(commentDiv)
+       const commentForm = document.querySelector('form')
+       commentForm.addEventListener("submit", (e) => {
+         e.preventDefault()
+         console.log('shazam')
+       })
+        
+      }
+      
+      
 
-
-  }
+    }
+  
 
