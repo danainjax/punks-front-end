@@ -10,25 +10,27 @@ class Punk {
   }
 
   renderCard = () => {
+    const { id, punktype, image, accessories} = this
+    
     punksDiv.innerHTML += `
       <div class="punks-container"> 
-        <div class="punk-card" data-id=${this.id}>
+        <div class="punk-card" data-id=${id}>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src=${this.image} alt="punkImage"/>
-                        <p class="likes" id="likes" data-id=${this.id}> ♡ </p>
+                        <img src=${image} alt="punkImage"/>
+                        <p class="likes" id="likes" data-id=${id}> ♡ </p>
                         <p class="punk-number"> Punk number ${parseInt(
-                          this.id + 99
+                          id + 99
                         )}</p>
-                        <p class="punktype">${this.punktype}</p>
-                        <p class="accessories">${this.accessories}
+                        <p class="punktype">${punktype}</p>
+                        <p class="accessories">${accessories}
                     </div>
                     <div class="flip-card-back">
-                        <h1 id="punk-number" dataset-id= ${this.id}>PUNK NUMBER ${parseInt(this.id + 99)}</h1>
+                        <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(id + 99)}</h1>
                         <p id="comments-container"> Comments </p>
                       
-                        <button id="add-comment" data-id=${this.id}>Add a comment</button>
+                        <button id="add-comment" data-id=${id}>Add a comment</button>
 
                     </div>
                 </div>
@@ -64,13 +66,15 @@ class Punk {
    static find = (id) => this.all.find(punk => punk.id == id)
   
   renderShow = () => {
+    const { id, punktype, image, accessories, comments} = this
+    console.log(this)
     punksDiv.innerHTML = `
     <div class="show">
-      <img src=${this.image} alt="punk" />
-      <h1 id="show" data-id =${this.id}> Punk number ${parseInt(this.id) + 99}</h1>
-      <p class="punktype">${this.punktype}</p>
-      <p class="accessories">${this.accessories}</p>
-      <p class="comments">${this.comments}</p>
+      <img src=${image} alt="punk" />
+      <h1 id="show" data-id =${id}> Punk number ${parseInt(id) + 99}</h1>
+      <p class="punktype">${punktype}</p>
+      <p class="accessories">${accessories}</p>
+      <p class="comments">Comments placeholder</p>
       <button id="comment">Add comment to wall</button>
       <button id="back">Go Back</button>
     `
