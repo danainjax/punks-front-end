@@ -61,21 +61,23 @@ class Comment {
 
     
     static handleComment = (comment) => {
+      console.log(comment) 
+    //   
       new Comment(comment)
-      console.log(Comment.all)
-      console.log(comment)
+      console.log(comment.text)
       const li = document.createElement('li')
       const ul = document.createElement('ul')
       const showDiv = document.querySelector('.show')
       showDiv.append(ul)
-      li.innerText = comment
+      li.innerText = comment.text
       ul.append(li)
+      document.querySelector('form').reset()
 
 
 
       
-    }
+    // }
   }
 
 
-    
+} 
