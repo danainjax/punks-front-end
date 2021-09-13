@@ -23,7 +23,7 @@ class Comment {
             <input type="text" id="comment" name="comment"><br>
             <label for="username">User name:</label><br>
             <input type="text" id="username" name="username">
-            <input type="submit" value="Submit Comment">
+            <input type="submit" id="submit-comment" value="Submit Comment">
         </form>`;
        const showPage = document.querySelector('.show')
        showPage.append(commentDiv)
@@ -36,25 +36,44 @@ class Comment {
       static submitForm() {
         console.log(this)
         const id = document.querySelector('#show').dataset.id
-        const commentForm = document.querySelector("#comment-form")
-        commentForm.addEventListener("click", (e) => {
+        const submitButton = document.querySelector("#submit-comment")
+        const commentForm = document.querySelector('form')
+        console.log(commentForm)
+        submitButton.addEventListener("click", (e) => {
          e.preventDefault()
          console.log(commentForm.comment.value)
          const newComment = {
            text: commentForm.comment.value,
            punk_id: id
+   
+        }
+          api.createComment(newComment).then(comment => this.handleComment(comment))
+              
 
-          }
-          api.createComment(newComment).then(comment => {
-            new Comment(comment).renderComment()
+          
           })
+      
+        }
+        
+      
 
-    }) 
+              
 
+    
+    static handleComment = (comment) => {
+      console.log(comment)
+      const li = document.createElement('li')
+      const ul = document.createElement('ul')
+      const showDiv = document.querySelector('.show')
+      showDiv.append(ul)
+      li.innerText = comment
+      ul.append(li)
+
+
+
+      
     }
-    renderComment = () => {
-      console.log("put comment here")
-    }
-  
-
   }
+
+
+    
