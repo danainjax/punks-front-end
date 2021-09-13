@@ -61,6 +61,8 @@ class Comment {
 
     
     static handleComment = (comment) => {
+      new Comment(comment)
+      console.log(Comment.all)
       console.log(comment)
       const li = document.createElement('li')
       const ul = document.createElement('ul')
