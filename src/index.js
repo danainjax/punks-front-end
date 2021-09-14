@@ -18,6 +18,7 @@ document.querySelector('form').addEventListener("submit", handleUsernameSubmit)
 function handleUsernameSubmit(e) {
     e.preventDefault()
     console.log(e.target.username.value)
+    api.findOrCreateUser(e.target.username.value).then(console.log)
     Punk.getPunks();
 }
 

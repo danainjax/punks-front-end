@@ -6,7 +6,20 @@ class ApiService {
 //fetch 1 , Punks Index // Read
     fetchPunks = () => fetch(this.api + "/punks").then(response => response.json())
 
-//fetch 2, Create a Comment, POST to db, Create
+// fetch 2, Create a User //Create
+
+    findOrCreateUser = (username) => {
+        return fetch(this.api + "/users", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({username: username}),
+        })
+        .then(response => response.json())
+    }
+
+//fetch 3, Create a Comment, POST to db, Create
     createComment = (newComment) => {
         return fetch(this.api + "/comments",{
             method: 'POST',
@@ -18,7 +31,7 @@ class ApiService {
         .then(response => response.json())
     }
 
-//fetch 3, Delete a comment, Destroy in db, Delete
+//fetch 4, Delete a comment, Destroy in db, Delete
     deleteComent = (comment) => {
         return fetch(this.api + `/comments/${id}`,{
             method: 'DELETE',
@@ -28,11 +41,14 @@ class ApiService {
         }
         
     
+//fetch 5 , Delete a user, Destroy in db, Delete
 
 
-//fetch 4, 
+
+//fetch 6, Search for a Punk by Number
 
     PunkByNumber = (id) => fetch(this.api + `/punks/${id}`).then(response => response.json())
 
 
 }
+
