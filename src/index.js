@@ -13,6 +13,13 @@ const login = document.querySelector('.log-in')
 // function handleSubmit() {
 //     console.log('log in here')
 // }
+document.querySelector('form').addEventListener("submit", handleUsernameSubmit)
+
+function handleUsernameSubmit(e) {
+    e.preventDefault()
+    console.log(e.target.username.value)
+}
+
 
 function clear() {
     
