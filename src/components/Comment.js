@@ -80,6 +80,6 @@ class Comment {
     // }
   }
 
-  static find = (id) => this.all.find(comment => comment.id == id)
+  
 
 } 
