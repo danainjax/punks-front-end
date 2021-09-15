@@ -1,16 +1,18 @@
 class Punk {
   static all = [];
   constructor(data) {
+    // debugger
     this.id = data.id;
     this.punktype = data.punktype;
     this.image = data.image;
-    this.accessories = JSON.parse(data.accessories)    
+    this.accessories = JSON.parse(data.accessories);   
+    // this.comments = data.comments.forEach(comment => comment.text);
     this.constructor.all.push(this);
    
   }
 
   renderCard = () => {
-    const { id, punktype, image, accessories} = this
+    const { id, punktype, image, accessories, comments} = this
     
     punksDiv.innerHTML += `
       <div class="punks-container"> 
@@ -68,13 +70,14 @@ class Punk {
   renderShow = () => {
     const { id, punktype, image, accessories, comments} = this
     console.log(this)
+    console.log(this)
     punksDiv.innerHTML = `
     <div class="show">
       <img src=${image} alt="punk" />
       <h1 id="show" data-id =${id}> Punk number ${parseInt(id) + 99}</h1>
       <p class="punktype">${punktype}</p>
       <p class="accessories">${accessories}</p>
-      <p class="comments">Comments placeholder</p>
+      <p class="comments">${comments}</p>
       <button id="comment">Add comment to wall</button>
       <button id="back">Go Back</button>
     `

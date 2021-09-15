@@ -21,6 +21,7 @@ class ApiService {
 
 //fetch 3, Create a Comment, POST to db, Create
     createComment = (newComment) => {
+        let user_id = user.id
         return fetch(this.api + "/comments",{
             method: 'POST',
             headers: {
@@ -31,6 +32,7 @@ class ApiService {
         .then(response => response.json())
     }
 
+    // _____________________________ MVP ___________________________________
 //fetch 4, Delete a comment, Destroy in db, Delete
     deleteComent = (comment) => {
         return fetch(this.api + `/comments/${id}`,{

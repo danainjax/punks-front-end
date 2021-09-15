@@ -44,7 +44,8 @@ class Comment {
          console.log(commentForm.comment.value)
          const newComment = {
            text: commentForm.comment.value,
-           punk_id: id
+           punk_id: id,
+           user_id: user.id
    
         }
           api.createComment(newComment).then(comment => this.handleComment(comment))
@@ -79,5 +80,6 @@ class Comment {
     // }
   }
 
+  static find = (id) => this.all.find(comment => comment.id == id)
 
 } 
