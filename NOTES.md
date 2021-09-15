@@ -18,6 +18,8 @@ Project build notes
 
         ApiService.createComment()
 
+[ ]  Need to fetch the punks info from db again after creating a new comment, info not updating unless page refreshes
+
 [X]  3. Create a User
 
     ApiService.findOrCreateUser()
