@@ -6,7 +6,7 @@ class Punk {
     this.punktype = data.punktype;
     this.image = data.image;
     this.accessories = JSON.parse(data.accessories);   
-    // this.comments = data.comments.forEach(comment => comment.text);
+    this.comments = data.comments.map(comment => new Comment(comment))
     this.constructor.all.push(this);
    
   }
@@ -77,15 +77,18 @@ class Punk {
       <h1 id="show" data-id =${id}> Punk number ${parseInt(id) + 99}</h1>
       <p class="punktype">${punktype}</p>
       <p class="accessories">${accessories}</p>
-      <p class="comments">${comments}</p>
+      <div class="container"></div>
       <button id="comment">Add comment to wall</button>
       <button id="back">Go Back</button>
+    </div>
     `
     Comment.showForm()
+    this.comments.forEach(comment => comment.render())
     const back = document.getElementById('back')
     back.addEventListener('click', (e) => {
       e.preventDefault()
       Punk.getPunks()
+      
     })
     }
       
