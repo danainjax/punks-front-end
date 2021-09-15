@@ -34,7 +34,7 @@ class ApiService {
 
     // _____________________________ MVP ___________________________________
 //fetch 4, Delete a comment, Destroy in db, Delete
-    deleteComent = (comment) => {
+    deleteComment = (comment) => {
         return fetch(this.api + `/comments/${id}`,{
             method: 'DELETE',
         })
