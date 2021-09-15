@@ -18,8 +18,6 @@ class Comment {
     commentDiv.innerHTML = `<form id="comment-form">
             <label for="comment">Comment:</label><br>
             <input type="text" id="comment" name="comment"><br>
-            <label for="username">User name:</label><br>
-            <input type="text" id="username" name="username">
             <input type="submit" id="submit-comment" value="Submit Comment">
         </form>`;
     const showPage = document.querySelector(".show");
@@ -50,22 +48,20 @@ class Comment {
   static handleComment = (comment) => {
     new Comment(comment);
     console.log(comment.text);
-    // const li = document.createElement("li");
-    // const ul = document.createElement("ul");
-    // const showDiv = document.querySelector(".show");
-    // showDiv.append(ul);
-    // 
-    this.render(comment)
+    document.querySelector(".container").innerHTML += `
+    <div class="card">
+      <p>${comment.text}</p>
+    </div>`
     document.querySelector("form").reset();
 
-    // }
   };
 
 
  render = (comment) => {
     console.log(this.data.text)
-    const commentLi = document.createElement('li')
-    commentLi.innerText = (this.data.text)
-    document.querySelector(".container").append(commentLi)
+    document.querySelector(".container").innerHTML += `
+    <div class="card">
+      <p>${this.data.text}</p>
+    </div>`
   }
 }
