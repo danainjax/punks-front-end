@@ -27,12 +27,14 @@ class Punk {
                         )}</p>
                         <p class="punktype">${punktype}</p>
                         <p class="accessories">${accessories}
+                        <p class="comments">I have ${this.comments.length} comments on my wall</p>
                     </div>
                     <div class="flip-card-back">
                         <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(id + 99)}</h1>
-                        <p id="comments-container"> Comments </p>
-                      
-                        <button id="add-comment" data-id=${id}>Add a comment</button>
+                        <div id="comments-container"> Comments </div>
+                        <p> Display Comments </p>
+
+                        
 
                     </div>
                 </div>
@@ -69,8 +71,6 @@ class Punk {
   
   renderShow = () => {
     const { id, punktype, image, accessories, comments} = this
-    console.log(this)
-    console.log(this)
     punksDiv.innerHTML = `
     <div class="show">
       <img src=${image} alt="punk" />
