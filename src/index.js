@@ -1,6 +1,4 @@
 const api = new ApiService("http://localhost:3000");
-
-const punksDiv = document.getElementById("cryptopunks");
 const main = document.querySelector("#main");
 const login = document.querySelector(".log-in");
 
@@ -18,5 +16,5 @@ function handleUsernameSubmit(e) {
 }
 
 function clear() {
-  punksDiv.style.display = "none";
+  main.style.display = "none";
 }

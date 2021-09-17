@@ -18,7 +18,7 @@ class Punk {
   }
 
   static getPunks() {
-    punksDiv.innerHTML = ""
+    main.innerHTML = ""
     api.fetchPunks().then(punks => {
       punks.forEach(punk => Punk.add(punk))
       this.renderPunkIndex()
@@ -28,9 +28,7 @@ class Punk {
 
   renderPunkCard () {
     const { id, punktype, image, accessories, comments} = this
-
-              punksDiv.innerHTML += `
-                <div class="punks-container"> 
+    document.querySelector('.punk-container').innerHTML += `
                   <div class="punk-card" data-id=${id}>
                       <div class="flip-card">
                           <div class="flip-card-inner">
@@ -67,7 +65,7 @@ class Punk {
     this.all.forEach(punk => {
       punk.renderPunkCard()
       punk.addLike()
-      punksDiv.addEventListener('click', this.handleIndexClick)
+      main.addEventListener('click', this.handleIndexClick)
  
   })
 };
@@ -87,7 +85,7 @@ class Punk {
   renderShow = () => {
     
     const { id, punktype, image, accessories, comments} = this
-    punksDiv.innerHTML = `
+    main.innerHTML = `
     <div class="show">
       <img src=${image} alt="punk" />
       <h1 id="show" data-id =${id}> Punk number ${parseInt(id) + 99}</h1>
