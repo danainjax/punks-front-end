@@ -8,56 +8,71 @@ class Punk {
     this.accessories = JSON.parse(data.accessories);   
     this.comments = data.comments.map(comment => new Comment(comment))
     this.constructor.all.push(this);
+    console.log(this)
    
   }
 
-  renderCard = () => {
-    const { id, punktype, image, accessories, comments} = this
-    
-    punksDiv.innerHTML += `
-      <div class="punks-container"> 
-        <div class="punk-card" data-id=${id}>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src=${image} alt="punkImage"/>
-                        <p class="likes" id="likes" data-id=${id}> ♡ </p>
-                        <p class="punk-number"> Punk number ${parseInt(
-                          id + 99
-                        )}</p>
-                        <p class="punktype">${punktype}</p>
-                        <p class="accessories">${accessories}
-                        <p class="comments">I have ${this.comments.length} comments on my wall</p>
-                    </div>
-                    <div class="flip-card-back">
-                        <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(id + 99)}</h1>
-                        <div id="comments-container"> Comments </div>
-                        <p> Display Comments </p>
 
-                        
-
-                    </div>
-                </div>
-            </div>
-          
-        </div>
-      </div>`;
-
-    
-  };
+  static add(punk){
+    new Punk(punk)
+  }
 
   static getPunks() {
     punksDiv.innerHTML = ""
-    api.fetchPunks().then((punks) => {
-        punks.forEach((punk) => new Punk(punk));
-        this.all.forEach((punk) => {
-          punk.renderCard();
-          punk.addLike();
-          punksDiv.addEventListener('click', this.handleIndexClick)
-          })
-    
-        });
-      };
+    api.fetchPunks().then(punks => {
+      punks.forEach(punk => Punk.add(punk))
+      this.renderPunkIndex()
+        
+      })
+    }
+
+  renderPunkCard () {
+    const { id, punktype, image, accessories, comments} = this
+
+              punksDiv.innerHTML += `
+                <div class="punks-container"> 
+                  <div class="punk-card" data-id=${id}>
+                      <div class="flip-card">
+                          <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                  <img src=${image} alt="punkImage"/>
+                                  <p class="likes" id="likes" data-id=${id}> ♡ </p>
+                                  <p class="punk-number"> Punk number ${parseInt(
+                                    id + 99
+                                  )}</p>
+                                  <p class="punktype">${punktype}</p>
+                                  <p class="accessories">${accessories}
+                                  <p class="comments">I have ${this.comments.length} comments on my wall</p>
+                              </div>
+                              <div class="flip-card-back">
+                                  <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(id + 99)}</h1>
+                                  <div id="comments-container"> Comments </div>
+                                  <p> Display Comments </p>
+                              </div>
+                          </div>
+                      </div>
+                    
+                  </div>
+                </div>`;
+
+
+  }
+
+
+
+  static renderPunkIndex () {
+    const punkContainer = document.createElement("div")
+    punkContainer.classList.add("punk-container")
+    document.getElementById("main").appendChild(punkContainer)
+    this.all.forEach(punk => {
+      punk.renderPunkCard()
+      punk.addLike()
+      punksDiv.addEventListener('click', this.handleIndexClick)
+ 
+  })
+};
+
+  
  
    static handleIndexClick = (e) => {
      e.preventDefault()
@@ -70,6 +85,7 @@ class Punk {
    static find = (id) => this.all.find(punk => punk.id == id)
   
   renderShow = () => {
+    
     const { id, punktype, image, accessories, comments} = this
     punksDiv.innerHTML = `
     <div class="show">

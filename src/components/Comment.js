@@ -47,7 +47,6 @@ class Comment {
 
   static handleComment = (comment) => {
     new Comment(comment);
-    console.log(comment.text);
     document.querySelector(".container").innerHTML += `
     <div class="card">
       <p>${comment.text}</p>
