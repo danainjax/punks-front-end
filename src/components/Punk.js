@@ -13,14 +13,12 @@ class Punk {
   }
 
 
-  static add(punk){
-    new Punk(punk)
-  }
+  
 
   static getPunks() {
     main.innerHTML = ""
     api.fetchPunks().then(punks => {
-      punks.forEach(punk => Punk.add(punk))
+      punks.forEach(punk => new Punk(punk))
       this.renderPunkIndex()
         
       })

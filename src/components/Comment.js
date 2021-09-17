@@ -62,5 +62,6 @@ class Comment {
     <div class="card">
       <p>${this.data.text}</p>
     </div>`
+    
   }
 }
