@@ -1,8 +1,10 @@
 Project build notes
+
+Merged branch- refactor for MVP
+
 [ ] When you add the comments to the show view, flip the card over.
 [ ] Don't let the comment box appear more than once, check what event we are listening for
 [ ] Remove call to login event listener when we re-render the punks
-[ ] Refactor how we get the punks, then render them into separate re-usable functions
 [ ] Build a log out // Determine if login persists beyond page refresh
 
 
