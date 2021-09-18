@@ -11,6 +11,7 @@ function handleUsernameSubmit(e) {
   api.findOrCreateUser(e.target.username.value).then((data) => {
     user = data;
     main.innerHTML = "";
+    Ticker.getTicker()
     Punk.getPunks()
   });
 }
@@ -18,3 +19,6 @@ function handleUsernameSubmit(e) {
 function clear() {
   main.style.display = "none";
 }
+
+// const bitcoin =  fetch('https://api.cryptonator.com/api/ticker/btc-usd').then(response => response.json()).then(resp => console.log(resp.ticker
+// ))

@@ -45,8 +45,8 @@ class Punk {
                               </div>
                               <div class="flip-card-back">
                                   <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(id + 99)}</h1>
-                                  <div id="comments-container"> Comments </div>
-                                  <p> Display Comments </p>
+                                  <p>COMMENTS</p>
+                                  <button id="comment">Add comment to wall</button>
                               </div>
                           </div>
                       </div>

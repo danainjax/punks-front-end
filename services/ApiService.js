@@ -52,5 +52,5 @@ class ApiService {
     PunkByNumber = (id) => fetch(this.api + `/punks/${id}`).then(response => response.json())
 
 
-}
 
+    }
