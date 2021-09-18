@@ -21,14 +21,14 @@ class Punk {
   static renderIndex = () => {
     const punkContainer = document.createElement("div");
     punkContainer.classList.add("punk-container");
-    main.innerHTML = ""
+    main.innerHTML = "";
     main.appendChild(punkContainer);
     this.all.forEach((punk) => {
       punk.renderCard();
       Like.addLike();
       punkContainer.addEventListener("click", this.handleIndexClick);
     });
-  }
+  };
   renderCard = () => {
     const { id, punktype, image, accessories, comments } = this;
     document.querySelector(".punk-container").innerHTML += `
@@ -43,10 +43,14 @@ class Punk {
                                   )}</p>
                                   <p class="punktype">${punktype}</p>
                                   <p class="accessories">${accessories}
-                                  <p class="comments">I have ${this.comments.length} comments on my wall</p>
+                                  <p class="comments">I have ${
+                                    this.comments.length
+                                  } comments on my wall</p>
                               </div>
                               <div class="flip-card-back">
-                                  <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(id + 99)}</h1>
+                                  <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(
+      id + 99
+    )}</h1>
                                   <div id="comments-container"> Comments </div>
                                   <p> Display Comments </p>
                               </div>
@@ -55,8 +59,7 @@ class Punk {
                     
                   </div>
                 </div>`;
-  }
-
+  };
 
   static handleIndexClick = (e) => {
     e.preventDefault();
@@ -88,11 +91,9 @@ class Punk {
     this.comments.forEach((comment) => comment.render());
     const back = document.getElementById("back");
     back.addEventListener("click", (e) => {
-     e.preventDefault();
+      e.preventDefault();
       // Punk.all = []
       Punk.renderIndex();
     });
   };
-
-  
 }
