@@ -155,3 +155,8 @@ img {
   text-decoration: none;
   cursor: pointer;
 }
+
+body.dark-theme{
+  background-color: black;
+  color: white;
+}

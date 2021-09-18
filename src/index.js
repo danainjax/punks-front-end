@@ -3,6 +3,10 @@ const main = document.querySelector("#main");
 const login = document.querySelector(".log-in");
 const modal = new Modal()
 
+document.querySelector('#dark-theme').addEventListener("click", () => {
+  console.log('dark theme')
+  document.body.classList.add('dark-theme')
+})
 
 document.querySelector("form").addEventListener("submit", handleUsernameSubmit);
 
