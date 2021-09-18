@@ -19,7 +19,7 @@ class Punk {
     });
   }
 
-  renderPunkCard() {
+  renderCard = () => {
     const { id, punktype, image, accessories, comments } = this;
     document.querySelector(".punk-container").innerHTML += `
                   <div class="punk-card" data-id=${id}>
@@ -52,7 +52,7 @@ class Punk {
     punkContainer.classList.add("punk-container");
     document.getElementById("main").appendChild(punkContainer);
     this.all.forEach((punk) => {
-      punk.renderPunkCard();
+      punk.renderCard();
       punk.addLike();
       main.addEventListener("click", this.handleIndexClick);
     });
@@ -95,7 +95,7 @@ class Punk {
     });
   };
 
-  addLike() {
+  addLike = () => {
     const likes = document.querySelectorAll(".likes");
     for (const like of likes) {
       like.addEventListener("click", (e) => {
