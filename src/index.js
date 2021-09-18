@@ -2,11 +2,18 @@ const api = new ApiService("http://localhost:3000");
 const main = document.querySelector("#main");
 const login = document.querySelector(".log-in");
 const modal = new Modal()
-
-document.querySelector('#dark-theme').addEventListener("click", () => {
+handleDarkTheme = () => {
   console.log('dark theme')
-  document.body.classList.add('dark-theme')
-})
+  if (document.body.classList == "") {
+    document.body.classList.add('dark-theme')
+  } else {
+    document.body.classList = ""
+  }
+  
+}
+document.querySelector('#dark-theme').addEventListener("click", handleDarkTheme)
+
+
 
 document.querySelector("form").addEventListener("submit", handleUsernameSubmit);
 
