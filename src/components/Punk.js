@@ -38,19 +38,13 @@ class Punk {
                               <div class="flip-card-front">
                                   <img src=${image} alt="punkImage"/>
                                   <p class="likes" id="likes" data-id=${id}> ♡ </p>
-                                  <p class="punk-number"> Punk number ${parseInt(
-                                    id + 99
-                                  )}</p>
+                                  <p class="punk-number"> Punk number ${parseInt(id + 99)}</p>
                                   <p class="punktype">${punktype}</p>
                                   <p class="accessories">${accessories}
-                                  <p class="comments">I have ${
-                                    this.comments.length
-                                  } comments on my wall</p>
+                                  <p class="comments">I have ${this.comments.length} comments on my wall</p>
                               </div>
                               <div class="flip-card-back">
-                                  <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(
-      id + 99
-    )}</h1>
+                                  <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(id + 99)}</h1>
                                   <div id="comments-container"> Comments </div>
                                   <p> Display Comments </p>
                               </div>
