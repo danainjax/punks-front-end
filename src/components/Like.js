@@ -3,10 +3,10 @@ class Like {
     this.data = data;
   }
 
-  addLike() {
+  static addLike = () => {
     const likes = document.querySelectorAll(".likes");
     for (const like of likes) {
-      like.addEventListener("onmouseover", (e) => {
+      like.addEventListener("click", (e) => {
         console.log(e.target.dataset.id);
         if (e.target.innerText == "♡") {
           e.target.innerText = "🖤";

@@ -47,14 +47,14 @@ class Punk {
                 </div>`;
   }
 
-  static renderIndex() {
+  static renderIndex = () => {
     const punkContainer = document.createElement("div");
     punkContainer.classList.add("punk-container");
     document.getElementById("main").appendChild(punkContainer);
     this.all.forEach((punk) => {
       punk.renderCard();
-      punk.addLike();
-      main.addEventListener("click", this.handleIndexClick);
+      Like.addLike();
+      punkContainer.addEventListener("click", this.handleIndexClick);
     });
   }
 
@@ -95,17 +95,5 @@ class Punk {
     });
   };
 
-  addLike = () => {
-    const likes = document.querySelectorAll(".likes");
-    for (const like of likes) {
-      like.addEventListener("click", (e) => {
-        console.log(e.target.dataset.id);
-        if (e.target.innerText == "♡") {
-          e.target.innerText = "🖤";
-        } else {
-          e.target.innerText = "♡";
-        }
-      });
-    }
-  }
+  
 }
