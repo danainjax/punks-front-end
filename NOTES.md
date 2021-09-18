@@ -1,6 +1,7 @@
 Project build notes
 
-Merged branch- refactor for MVP
+[ ] Center the div in the show view
+[ ] When comments are added, instead of adding to bottom of show page, pop a modal or some other html element
 
 [ ] When you add the comments to the show view, flip the card over.
 [ ] Don't let the comment box appear more than once, check what event we are listening for

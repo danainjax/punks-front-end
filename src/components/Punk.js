@@ -12,13 +12,23 @@ class Punk {
   }
 
   static getPunks() {
-    // main.innerHTML = "";
     api.fetchPunks().then((punks) => {
       punks.forEach((punk) => new Punk(punk));
       this.renderIndex();
     });
   }
 
+  static renderIndex = () => {
+    const punkContainer = document.createElement("div");
+    punkContainer.classList.add("punk-container");
+    main.innerHTML = ""
+    main.appendChild(punkContainer);
+    this.all.forEach((punk) => {
+      punk.renderCard();
+      Like.addLike();
+      punkContainer.addEventListener("click", this.handleIndexClick);
+    });
+  }
   renderCard = () => {
     const { id, punktype, image, accessories, comments } = this;
     document.querySelector(".punk-container").innerHTML += `
@@ -47,16 +57,6 @@ class Punk {
                 </div>`;
   }
 
-  static renderIndex = () => {
-    const punkContainer = document.createElement("div");
-    punkContainer.classList.add("punk-container");
-    document.getElementById("main").appendChild(punkContainer);
-    this.all.forEach((punk) => {
-      punk.renderCard();
-      Like.addLike();
-      punkContainer.addEventListener("click", this.handleIndexClick);
-    });
-  }
 
   static handleIndexClick = (e) => {
     e.preventDefault();
@@ -88,10 +88,9 @@ class Punk {
     this.comments.forEach((comment) => comment.render());
     const back = document.getElementById("back");
     back.addEventListener("click", (e) => {
-      main.innerHTML = ""
-      Punk.all = []
-      e.preventDefault();
-      Punk.getPunks();
+     e.preventDefault();
+      // Punk.all = []
+      Punk.renderIndex();
     });
   };
 
