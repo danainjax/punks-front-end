@@ -5,28 +5,23 @@ class Punk {
     this.id = data.id;
     this.punktype = data.punktype;
     this.image = data.image;
-    this.accessories = JSON.parse(data.accessories);   
-    this.comments = data.comments.map(comment => new Comment(comment))
+    this.accessories = JSON.parse(data.accessories);
+    this.comments = data.comments.map((comment) => new Comment(comment));
     this.constructor.all.push(this);
-    console.log(this)
-   
+    console.log(this);
   }
 
-
-  
-
   static getPunks() {
-    main.innerHTML = ""
-    api.fetchPunks().then(punks => {
-      punks.forEach(punk => new Punk(punk))
-      this.renderPunkIndex()
-        
-      })
-    }
+    // main.innerHTML = "";
+    api.fetchPunks().then((punks) => {
+      punks.forEach((punk) => new Punk(punk));
+      this.renderIndex();
+    });
+  }
 
-  renderPunkCard () {
-    const { id, punktype, image, accessories, comments} = this
-    document.querySelector('.punk-container').innerHTML += `
+  renderPunkCard() {
+    const { id, punktype, image, accessories, comments } = this;
+    document.querySelector(".punk-container").innerHTML += `
                   <div class="punk-card" data-id=${id}>
                       <div class="flip-card">
                           <div class="flip-card-inner">
@@ -50,39 +45,34 @@ class Punk {
                     
                   </div>
                 </div>`;
-
-
   }
 
+  static renderIndex() {
+    const punkContainer = document.createElement("div");
+    punkContainer.classList.add("punk-container");
+    document.getElementById("main").appendChild(punkContainer);
+    this.all.forEach((punk) => {
+      punk.renderPunkCard();
+      punk.addLike();
+      main.addEventListener("click", this.handleIndexClick);
+    });
+  }
 
+  static handleIndexClick = (e) => {
+    e.preventDefault();
+    if (
+      e.target.tagName === "IMG" ||
+      e.target.classList.contains("punk-number")
+    ) {
+      const id = e.target.closest(".punk-card").dataset.id;
+      this.find(id).renderShow();
+    }
+  };
 
-  static renderPunkIndex () {
-    const punkContainer = document.createElement("div")
-    punkContainer.classList.add("punk-container")
-    document.getElementById("main").appendChild(punkContainer)
-    this.all.forEach(punk => {
-      punk.renderPunkCard()
-      punk.addLike()
-      main.addEventListener('click', this.handleIndexClick)
- 
-  })
-};
+  static find = (id) => this.all.find((punk) => punk.id == id);
 
-  
- 
-   static handleIndexClick = (e) => {
-     e.preventDefault()
-     if(e.target.tagName === "IMG" || e.target.classList.contains('punk-number')){
-       const id = e.target.closest('.punk-card').dataset.id
-       this.find(id).renderShow()
-     }
-   }
-
-   static find = (id) => this.all.find(punk => punk.id == id)
-  
   renderShow = () => {
-    
-    const { id, punktype, image, accessories, comments} = this
+    const { id, punktype, image, accessories, comments } = this;
     main.innerHTML = `
     <div class="show">
       <img src=${image} alt="punk" />
@@ -93,18 +83,17 @@ class Punk {
       <button id="comment">Add comment to wall</button>
       <button id="back">Go Back</button>
     </div>
-    `
-    Comment.showForm()
-    this.comments.forEach(comment => comment.render())
-    const back = document.getElementById('back')
-    back.addEventListener('click', (e) => {
-      e.preventDefault()
-      Punk.getPunks()
-      
-    })
-    }
-      
-
+    `;
+    Comment.showForm();
+    this.comments.forEach((comment) => comment.render());
+    const back = document.getElementById("back");
+    back.addEventListener("click", (e) => {
+      main.innerHTML = ""
+      Punk.all = []
+      e.preventDefault();
+      Punk.getPunks();
+    });
+  };
 
   addLike() {
     const likes = document.querySelectorAll(".likes");

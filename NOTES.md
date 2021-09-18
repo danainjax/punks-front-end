@@ -20,7 +20,8 @@ Merged branch- refactor for MVP
 
         ApiService.createComment()
 
-[ ]  Need to fetch the punks info from db again after creating a new comment, info not updating unless page refreshes
+[X]  Need to fetch the punks info from db again after creating a new comment, info not updating unless page refreshes 
+    Note, it was working, just wasn't clearing out the Punk.all [] and was viewing the incorrect data. Solved by clearing innerHTML of the div and then clearing static all before calling Punk.getPunks()
 
 [X]  3. Create a User
 
@@ -62,7 +63,7 @@ HTML
 
 Requirements:
 
-[ ] The application must be an HTML, CSS, and JavaScript frontend with a Rails API backend. All interactions between the client and the server must be handled asynchronously (AJAX) and use JSON as the communication format.
+[X] The application must be an HTML, CSS, and JavaScript frontend with a Rails API backend. All interactions between the client and the server must be handled asynchronously (AJAX) and use JSON as the communication format.
 
 [X] The JavaScript application must use Object Oriented JavaScript (classes) to encapsulate related data and behavior.
 
@@ -77,5 +78,5 @@ Requirements:
 
 JavaScript
 [ ] Use classes and functions to organize your code into reusable pieces.
-[ ] Translate JSON responses into JavaScript model objects using ES6 class or constructor function syntax.
+[X] Translate JSON responses into JavaScript model objects using ES6 class or constructor function syntax.
 [ ] Use ES6 features when appropriate (e.g. arrow functions, let & const, rest and spread syntax).
