@@ -2,8 +2,9 @@ const api = new ApiService("http://localhost:3000");
 const main = document.querySelector("#main");
 const login = document.querySelector(".log-in");
 const modal = new Modal()
+
+
 handleDarkTheme = () => {
-  console.log('dark theme')
   if (document.body.classList == "") {
     document.body.classList.add('dark-theme')
   } else {
