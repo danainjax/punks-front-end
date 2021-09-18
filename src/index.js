@@ -1,6 +1,7 @@
 const api = new ApiService("http://localhost:3000");
 const main = document.querySelector("#main");
 const login = document.querySelector(".log-in");
+const modal = new Modal()
 
 
 document.querySelector("form").addEventListener("submit", handleUsernameSubmit);
