@@ -1,5 +1,13 @@
 Project build notes
 
+
+MODAL
+
+Pseudo code-
+Use the modal to [1] Login
+Use a modal to [2] Add a comment
+Use a modal to [3] Add a contract
+
 [ ] Center the div in the show view
 [ ] When comments are added, instead of adding to bottom of show page, pop a modal or some other html element
 
