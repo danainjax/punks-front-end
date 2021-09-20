@@ -1,5 +1,11 @@
 Project build notes
 
+1. Work on finding a punk by number
+2. Move comments to a modal 
+3. Make log in a modal
+4. Add a contract
+5. Display the user account page, work on user model
+6. Get likes working 'counter cache'
 
 MODAL
 
