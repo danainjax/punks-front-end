@@ -17,6 +17,7 @@ document.querySelector('#dark-theme').addEventListener("click", handleDarkTheme)
 
 
 showLoginForm = () => {
+  clear()
   main.innerHTML = `<form id="login">
   <label for="username">Username</label>
   <input type="text" id="username" name="username">
