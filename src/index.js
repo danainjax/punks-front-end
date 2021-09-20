@@ -34,4 +34,8 @@ function clear() {
   main.style.display = "none";
 }
 
+api.PunkByNumber(punkId)
+
+
+
 
