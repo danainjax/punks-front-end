@@ -51,7 +51,7 @@ handleLogOutClick = () => {
 
 document.querySelector('#logout').addEventListener('click', handleLogOutClick)
 
-
+document.querySelector('#get-punks').addEventListener('click', Punk.renderIndex)
   
 
 
