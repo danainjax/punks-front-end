@@ -20,16 +20,16 @@
   <body>
     <ul>
       <li><a class="active" href="#home">My Account</a></li>
-      <li><a href="#news">Punks</a></li>
-      <li><a href="#contact">Find A Punk By Number</a></li>
-      <li><a href="#contact">Contract a Punk</a></li>
-      <li><a href="#login">Login</a></li>
-      <li><a href="#logout">Logout</a></li>
-      <li><a href="#contact">Light/Dark</a></li>
+      <li><a href="#">Punks</a></li>
+      <li><a href="#" id="find-a-punk">Find A Punk By Number</a></li>
+      <li><a href="#" id="contract-a-punk">Contract a Punk</a></li>
+      <li><a href="#" id="login">Login</a></li>
+      <li><a href="#" id="logout">Logout</a></li>
+      <li><a href="#" id= "dark-theme">Light/Dark</a></li>
     </ul>
     
     <div class="ticker"></div>
-    <button type="button" id="dark-theme">Toggle Dark Mode</button>
+    
 
       <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -42,13 +42,9 @@
 
   </div>
 
-    <div id="main">
+    <div id="main" display="none">
       
-      <form id="login">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username">
-        <input type="submit" class="log-in" value="Log In">
-      </form>
+      
     </div>
       <div id="cryptopunks"></div>
     

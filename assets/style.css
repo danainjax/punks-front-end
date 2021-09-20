@@ -190,7 +190,8 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  /* background-color: #111; */
+  box-shadow: 20px 20px 30px 10px rgba(243, 238, 238, 0.3)
 }
 
 .active {

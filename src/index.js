@@ -16,7 +16,16 @@ document.querySelector('#dark-theme').addEventListener("click", handleDarkTheme)
 
 
 
+showLoginForm = () => {
+  main.innerHTML = `<form id="login">
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username">
+  <input type="submit" class="log-in" value="Log In">
+</form>`
 document.querySelector("form").addEventListener("submit", handleUsernameSubmit);
+}
+
+document.querySelector('#login').addEventListener('click', showLoginForm)
 
 let user;
 
@@ -24,17 +33,28 @@ function handleUsernameSubmit(e) {
   e.preventDefault();
   api.findOrCreateUser(e.target.username.value).then((data) => {
     user = data;
-    main.innerHTML = "";
+    clear();
     Ticker.getTicker()
     Punk.getPunks()
   });
 }
 
 function clear() {
-  main.style.display = "none";
+  main.innerHTML = "";
 }
 
-api.PunkByNumber(punkId)
+handleLogOutClick = () => {
+  user = "";
+  clear();
+}
+
+document.querySelector('#logout').addEventListener('click', handleLogOutClick)
+
+
+  
+
+
+// api.PunkByNumber(punkId)
 
 
 
