@@ -2,7 +2,7 @@ const api = new ApiService("http://localhost:3000");
 const main = document.querySelector("#main");
 const login = document.querySelector(".log-in");
 const modal = new Modal()
-
+const tickerDiv = document.querySelector('.ticker')
 
 handleDarkTheme = () => {
   if (document.body.classList == "") {
@@ -42,16 +42,34 @@ function handleUsernameSubmit(e) {
 
 function clear() {
   main.innerHTML = "";
+  tickerDiv.innerHTML = "";
 }
 
 handleLogOutClick = () => {
   user = "";
   clear();
+  main.innerHTML = `<h2>PUNKS</h2>
+  <img src="assets/images/allPunks.png"/>
+  `
+}
+
+
+handleFindAPunkClick = (e) => {
+  clear()
+  modal.open()
+  modal.addCloseEventListener()
+  Punk.punkByNumberForm()
+  
+  api.PunkByNumber(e.target.number.value)
+  console.log('punk by number')
 }
 
 document.querySelector('#logout').addEventListener('click', handleLogOutClick)
 
 document.querySelector('#get-punks').addEventListener('click', Punk.renderIndex)
+
+document.querySelector('#find-a-punk').addEventListener('click', handleFindAPunkClick)
+
   
 
 

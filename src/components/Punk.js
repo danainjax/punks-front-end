@@ -90,4 +90,16 @@ class Punk {
       Punk.renderIndex();
     });
   };
+
+
+
+  static punkByNumberForm = () => {
+    modal.main.innerHTML += `
+  <form id="find-punk">
+    <label for="number">Enter a number between 1 and 10000</label>
+    <input type="text" id="number" name="number">
+    <input type="submit" class="number" value="Punk By Number">
+  </form>
+  `
+  }
 }
