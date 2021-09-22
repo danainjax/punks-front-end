@@ -101,5 +101,17 @@ class Punk {
     <input type="submit" class="number" value="Punk By Number">
   </form>
   `
-  }
+  document.getElementById('find-punk').addEventListener('submit', (e) => {
+    e.preventDefault()
+    let punkId = (e.target.number.value)
+    console.log(punkId)
+    modal.close()
+    api.PunkByNumber(punkId)
+// You are now grabbing the punk by number, next step is to render to the page in the main
+  })
 }
+
+}
+
+  
+

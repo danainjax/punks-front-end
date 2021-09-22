@@ -55,13 +55,13 @@ handleLogOutClick = () => {
 
 
 handleFindAPunkClick = (e) => {
+  e.preventDefault()
   clear()
   modal.open()
   modal.addCloseEventListener()
   Punk.punkByNumberForm()
-  
-  api.PunkByNumber(e.target.number.value)
-  console.log('punk by number')
+  // api.PunkByNumber(punkId)
+  // console.log(punkId)
 }
 
 document.querySelector('#logout').addEventListener('click', handleLogOutClick)
