@@ -106,8 +106,11 @@ class Punk {
     let punkId = (e.target.number.value)
     console.log(punkId)
     modal.close()
-    api.PunkByNumber(punkId)
-// You are now grabbing the punk by number, next step is to render to the page in the main
+    api.PunkByNumber(punkId).then((punk => new Punk(punk)))
+    console.log(Punk.all)
+    this.getPunks()
+    
+
   })
 }
 

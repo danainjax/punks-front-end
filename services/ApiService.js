@@ -49,7 +49,8 @@ class ApiService {
 
 //fetch 6, Search for a Punk by Number
 
-    PunkByNumber = (punkId) => fetch(this.api + `/punks/${punkId}`).then(response => response.json()).then(console.log)
+    PunkByNumber = (punkId) => fetch(this.api + `/punks/${punkId}`).then(response => response.json())
+    // .then(console.log)
 
 
 
