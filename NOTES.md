@@ -8,17 +8,14 @@ Project build notes
     *IN my DB the punks are stored from id 1 to id 10000, in the api I am seeding the db with, they are stored from 000 - 9999. Need to solve for that.*
 
 2. Move comments to a modal 
-3. Make log in a modal
-4. Add a contract
-5. Display the user account page, work on user model
-6. Get likes working 'counter cache'
+3. Add a contract
+4. Display the user account page, work on user model
+5. Get likes working 'counter cache'
 
 MODAL
 
-Pseudo code-
-Use the modal to [1] Login
-Use a modal to [2] Add a comment
-Use a modal to [3] Add a contract
+Use a modal to [1] Add a comment
+Use a modal to [2] Add a contract
 
 
 [ ] When comments are added, instead of adding to bottom of show page, pop a modal or some other html element
@@ -79,7 +76,7 @@ G. Add info pages, to show what CryptoPunks are and why they are important, defi
 
 
 HTML
-[ ]  1. Modal - working on implementing. Currently using in Punk By Number
+[ ]  1. Modal - working on implementing with Comments and Contract
 [ ] 2. Flip card - need to solve for ability to flip when I want, not just all the time
 [ ] 3. Background animation - optional
 [X] 4. Nav bar
