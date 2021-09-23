@@ -37,6 +37,7 @@ function handleUsernameSubmit(e) {
   modal.close()
   api.findOrCreateUser(e.target.username.value).then((data) => {
     user = data;
+    modal.main.innerHTML = ""
     clear();
     Ticker.getTicker()
     Punk.getPunks()

@@ -1,5 +1,6 @@
 Project build notes
 
+
 1. Work on finding a punk by number
     Grabbing the punkID, creating a new Punk object on the front end, calling getPunks to render the punk on the index page, but the number parsing in the h1 is now breaking, need to find a way to parse the ID without it breaking when the number goes over 100. 
     

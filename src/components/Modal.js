@@ -24,6 +24,7 @@ addCloseEventListener = () => {
     this.modal.addEventListener('click', (e) => {
         console.log(e.target.id)
         if(e.target.classList.contains('close') || e.target.id === "myModal") {
+            modal.main.innerHTML = ""
             this.close()
         }
     })
