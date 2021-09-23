@@ -1,6 +1,7 @@
 Project build notes
 
 1. Work on finding a punk by number
+    Grabbing the punkID, now need to render to the page
 2. Move comments to a modal 
 3. Make log in a modal
 4. Add a contract
@@ -14,12 +15,12 @@ Use the modal to [1] Login
 Use a modal to [2] Add a comment
 Use a modal to [3] Add a contract
 
-[ ] Center the div in the show view
+
 [ ] When comments are added, instead of adding to bottom of show page, pop a modal or some other html element
 
 [ ] When you add the comments to the show view, flip the card over.
 [ ] Don't let the comment box appear more than once, check what event we are listening for
-[ ] Remove call to login event listener when we re-render the punks
+
 [ ] Build a log out // Determine if login persists beyond page refresh
 
 
@@ -28,19 +29,19 @@ Use a modal to [3] Add a contract
 
 [X] 1. R - Read, Punks displaying on page, fetch to localhost:3000/punks/index
 
-        ApiService.fetchPunks()
+        api.fetchPunks()
 
 [X]   2. C - create a new comment
     Create a comment object on submit of button, pass the object to the fetch POST to the backend, then show the updated Punk card with comments
 
-        ApiService.createComment()
+        api.createComment(newComment)
 
 [X]  Need to fetch the punks info from db again after creating a new comment, info not updating unless page refreshes 
     Note, it was working, just wasn't clearing out the Punk.all [] and was viewing the incorrect data. Solved by clearing innerHTML of the div and then clearing static all before calling Punk.getPunks()
 
 [X]  3. Create a User
 
-    ApiService.findOrCreateUser()
+    api.findOrCreateUser(e.target.username.value)
 
 
 
@@ -48,12 +49,14 @@ Use a modal to [3] Add a contract
 
 [ ]    Create a Contract/Sale
 
-    3. R - Read, Find PunkByNumber, fetch to localhost:3000/punks/id
+[X]    4. R - Read, Find PunkByNumber, fetch to localhost:3000/punks/id
     Coded the backend so that the json is rendered to punks/id
     Send to show page. Create new punk if it does not exist in the database, render it, if it does.
 
-    4. U - update/edit a comment, like, or sale?
-    5. D - delete a comment, like
+    api.PunkByNumber(punkId)
+
+    5. U - update/edit a comment, like, or sale?
+    6. D - delete a comment, like
 
 B. Decide on a second model, (likes, comments, etc. - pick 1 to start)
     [X] a.  ***Comments - currently working on Comments
@@ -65,16 +68,16 @@ B. Decide on a second model, (likes, comments, etc. - pick 1 to start)
 [X] C. Build an adpater/service class to handle the api calls.
     ApiService.js
 [X] D. Hit MVP asap, then refactor and branch to add each new feature. One at a time.
-E. Add a Navbar
-F. Add API data to show current crypto prices, ETH, bitcoin, etc with graphic and #
+[X]Add a Navbar
+[X] Add API data to show current crypto prices, ETH, bitcoin, etc with graphic and #
 G. Add info pages, to show what CryptoPunks are and why they are important, define what a NFT is, etc. (Christie's article, NY Times article)
 
 
 HTML
-    1. Modal
-    2. Flip card
-    3. Background animation
-    4. Nav bar
+[ ]  1. Modal - working on implementing. Currently using in Punk By Number
+[ ] 2. Flip card - need to solve for ability to flip when I want, not just all the time
+[ ] 3. Background animation - optional
+[X] 4. Nav bar
 
 Requirements:
 
