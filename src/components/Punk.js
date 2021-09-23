@@ -38,7 +38,7 @@ class Punk {
                               <div class="flip-card-front">
                                   <img src=${image} alt="punkImage"/>
                                   <p class="likes" id="likes" data-id=${id}> ♡ </p>
-                                  <p class="punk-number"> Punk number ${parseInt(id + 99)}</p>
+                                  <p class="punk-number"> Punk number ${parseInt(id - 1)}</p>
                                   <p class="punktype">${punktype}</p>
                                   <p class="accessories">${accessories}
                                   <p class="comments">I have ${this.comments.length} comments on my wall</p>
@@ -73,7 +73,7 @@ class Punk {
     main.innerHTML = `
     <div class="show">
       <img src=${image} alt="punk" />
-      <h1 id="show" data-id =${id}> Punk number ${parseInt(id) + 99}</h1>
+      <h1 id="show" data-id =${id}> Punk number ${parseInt(id) -1 }</h1>
       <p class="punktype">${punktype}</p>
       <p class="accessories">${accessories}</p>
       <div class="container"></div>
@@ -106,9 +106,13 @@ class Punk {
     let punkId = (e.target.number.value)
     console.log(punkId)
     modal.close()
-    api.PunkByNumber(punkId).then((punk => new Punk(punk)))
+    Punk.all = []
+    api.PunkByNumber(punkId-1).then((punk => new Punk(punk)))
     console.log(Punk.all)
+    clear()
+    
     this.getPunks()
+   
     
 
   })

@@ -1,7 +1,12 @@
 Project build notes
 
 1. Work on finding a punk by number
-    Grabbing the punkID, creating a new Punk object on the front end, calling getPunks to render the punk on the index page, but the number parsing in the h1 is now breaking, need to find a way to parse the ID without it breaking when the number goes over 100. Also need to handle how to save the find a punk past page refresh. Maybe save all the Find A Punks in to the index as well? Currently limiting to 25, But would need to add that punk to the Punk.all.limit(25). Maybe an if statement? or concatenate?
+    Grabbing the punkID, creating a new Punk object on the front end, calling getPunks to render the punk on the index page, but the number parsing in the h1 is now breaking, need to find a way to parse the ID without it breaking when the number goes over 100. 
+    
+    Also need to handle how to save the find a punk past page refresh. Maybe save all the Find A Punks in to the index as well? Currently limiting to 25, But would need to add that punk to the Punk.all.limit(25). Maybe an if statement? or concatenate?
+
+    *IN my DB the punks are stored from id 1 to id 10000, in the api I am seeding the db with, they are stored from 000 - 9999. Need to solve for that.*
+
 2. Move comments to a modal 
 3. Make log in a modal
 4. Add a contract
