@@ -17,13 +17,15 @@ document.querySelector('#dark-theme').addEventListener("click", handleDarkTheme)
 
 
 showLoginForm = () => {
+  modal.open()
   clear()
-  main.innerHTML = `<form id="login">
+  modal.main.innerHTML = `<form id="login">
   <label for="username">Username</label>
   <input type="text" id="username" name="username">
   <input type="submit" class="log-in" value="Log In">
 </form>`
 document.querySelector("form").addEventListener("submit", handleUsernameSubmit);
+
 }
 
 document.querySelector('#login').addEventListener('click', showLoginForm)
@@ -32,6 +34,7 @@ let user;
 
 function handleUsernameSubmit(e) {
   e.preventDefault();
+  modal.close()
   api.findOrCreateUser(e.target.username.value).then((data) => {
     user = data;
     clear();
