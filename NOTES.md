@@ -1,5 +1,12 @@
 Project build notes
 
+COMMENTS-
+
+
+Pseudo CODE:
+COMMENTS currently appear below the Punk info, move them to another HTML element after using a modal to enter a comment. Either use the back of the card or some element that slides out.
+
+
 
 1. Work on finding a punk by number
     Grabbing the punkID, creating a new Punk object on the front end, calling getPunks to render the punk on the index page, but the number parsing in the h1 is now breaking, need to find a way to parse the ID without it breaking when the number goes over 100. 
