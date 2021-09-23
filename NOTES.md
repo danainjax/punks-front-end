@@ -8,7 +8,8 @@ Project build notes
 
     *IN my DB the punks are stored from id 1 to id 10000, in the api I am seeding the db with, they are stored from 000 - 9999. Need to solve for that.*
 
-2. Move comments to a modal 
+******** 2. Move comments to a modal **********
+
 3. Add a contract
 4. Display the user account page, work on user model
 5. Get likes working 'counter cache'
