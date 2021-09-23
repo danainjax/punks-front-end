@@ -15,7 +15,7 @@ class Ticker {
                 const ticker = document.createElement('marquee')
                 console.log(ticker.innerHTML)
                 ticker.innerHTML = `Crypto currency...........${eth.base}...${eth.target}...${eth.price}...${eth.volume}...${eth.change}`
-                document.querySelector('.ticker').appendChild(ticker)
+                tickerDiv.appendChild(ticker)
             }
             
 

@@ -18,9 +18,21 @@
     <title>punks</title>
   </head>
   <body>
-    <h1 id="title">Punks</h1>
+    <ul>
+      <li><a class="active" href="#home">My Account</a></li>
+      <li><a href="#" id="login">Login</a></li>
+      <li><a href="#" id= "dark-theme">Light/Dark</a></li>
+      <li><a href="#" id ="get-punks">Punks</a></li>
+      <li><a href="#" id="find-a-punk">Find A Punk By Number</a></li>
+      <li><a href="#" id="contract-a-punk">Contract a Punk</a></li>
+      <li><a href="#" id="logout">Logout</a></li>
+      
+    </ul>
+    
+    
     <div class="ticker"></div>
-    <button type="button" id="dark-theme">Toggle Dark Mode</button>
+    
+    
 
       <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -28,18 +40,15 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text here</p>
+    <div id="modal-main"></div>
   </div>
 
   </div>
 
     <div id="main">
+      <h2>PUNKS</h2>
+      <img src="assets/images/allPunks.png"/>
       
-      <form id="login">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username">
-        <input type="submit" class="log-in" value="Log In">
-      </form>
     </div>
       <div id="cryptopunks"></div>
     
