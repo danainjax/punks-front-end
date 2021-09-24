@@ -8,7 +8,7 @@ class Punk {
     this.accessories = JSON.parse(data.accessories);
     this.comments = data.comments.map((comment) => new Comment(comment));
     this.constructor.all.push(this);
-    console.log(this);
+    
   }
 
   static getPunks() {

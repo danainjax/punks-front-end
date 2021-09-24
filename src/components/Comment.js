@@ -38,6 +38,7 @@ class Comment {
         text: commentForm.comment.value,
         punk_id: id,
         user_id: user.id,
+        
       };
       api
         .createComment(newComment)
