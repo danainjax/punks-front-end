@@ -1,14 +1,15 @@
 class Punk {
   static all = [];
   constructor(data) {
-    // debugger
+  //  debugger
     this.id = data.id;
     this.punktype = data.punktype;
     this.image = data.image;
     this.accessories = JSON.parse(data.accessories);
     this.comments = data.comments.map((comment) => new Comment(comment));
+    this.likes = data.likes.map((like) => new Like(like));
     this.constructor.all.push(this);
-    console.log(this);
+    
   }
 
   static getPunks() {

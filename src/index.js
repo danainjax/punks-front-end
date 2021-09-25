@@ -24,7 +24,7 @@ showLoginForm = () => {
   <input type="text" id="username" name="username">
   <input type="submit" class="log-in" value="Log In">
 </form>`
-document.querySelector("form").addEventListener("submit", handleUsernameSubmit);
+document.querySelector("form").addEventListener("submit", User.handleUsernameSubmit);
 
 }
 
@@ -32,17 +32,6 @@ document.querySelector('#login').addEventListener('click', showLoginForm)
 
 let user;
 
-function handleUsernameSubmit(e) {
-  e.preventDefault();
-  modal.close()
-  api.findOrCreateUser(e.target.username.value).then((data) => {
-    user = data;
-    modal.main.innerHTML = ""
-    clear();
-    Ticker.getTicker()
-    Punk.getPunks()
-  });
-}
 
 function clear() {
   main.innerHTML = "";
@@ -51,6 +40,7 @@ function clear() {
 
 handleLogOutClick = () => {
   user = "";
+  User.all = []
   clear();
   main.innerHTML = `<h2>PUNKS</h2>
   <img src="assets/images/allPunks.png"/>
@@ -64,8 +54,7 @@ handleFindAPunkClick = (e) => {
   modal.open()
   modal.addCloseEventListener()
   Punk.punkByNumberForm()
-  // api.PunkByNumber(punkId)
-  // console.log(punkId)
+  
 }
 
 document.querySelector('#logout').addEventListener('click', handleLogOutClick)
@@ -74,10 +63,12 @@ document.querySelector('#get-punks').addEventListener('click', Punk.renderIndex)
 
 document.querySelector('#find-a-punk').addEventListener('click', handleFindAPunkClick)
 
+
+
   
 
 
-// api.PunkByNumber(punkId)
+
 
 
 

@@ -52,6 +52,18 @@ class ApiService {
     PunkByNumber = (punkId) => fetch(this.api + `/punks/${punkId}`).then(response => response.json())
     // .then(console.log)
 
+    createLike = (newLike) => {
+        
+        return fetch(this.api + "/likes",{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newLike),
+        })
+        .then(response => response.json())
+    }
+
 
 
     }
