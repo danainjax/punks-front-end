@@ -18,11 +18,21 @@ class User {
           clear();
           Ticker.getTicker()
           Punk.getPunks()
-          modal.open()
-          modal.main.innerHTML = `<p>Welcome, ${user.username}! </p>`
+          User.greetUser()
           
         });
       }
 
+      static greetUser = () => {
+        modal.open()
+          modal.main.innerHTML = `<p id="greet-user">Welcome, ${user.username}! </p>`
+          modal.addCloseEventListener()
+          }
 
-}
+          
+
+        }
+
+
+
+
