@@ -97,7 +97,7 @@ class Punk {
   static punkByNumberForm = () => {
     modal.main.innerHTML += `
   <form id="find-punk">
-    <label for="number">Enter a number between 1 and 10000</label>
+    <label for="number">Enter a number between 0 and 9999</label>
     <input type="text" id="number" name="number">
     <input type="submit" class="number" value="Punk By Number">
   </form>
@@ -108,8 +108,8 @@ class Punk {
     console.log(punkId)
     modal.close()
     Punk.all = []
-    api.PunkByNumber(punkId-1).then((punk => new Punk(punk)))
-    console.log(Punk.all)
+    punkId = parseInt(punkId) + 1
+    api.PunkByNumber(punkId).then((punk => new Punk(punk)))
     clear()
     
     this.getPunks()
