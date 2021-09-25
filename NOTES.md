@@ -1,5 +1,7 @@
 Project build notes
 
+Branched to my-account to work on a page that shows user account, likes, comments, and potentially contracted punks in a profile
+
 COMMENTS-
 
 
