@@ -113,7 +113,7 @@ class Punk {
     clear()
     
     this.getPunks()
-   
+  //  modal.main.innerHTML = ""
     
 
   })
