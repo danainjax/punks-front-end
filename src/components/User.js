@@ -1,7 +1,9 @@
 class User {
     static all = [];
     constructor(data){
+      console.log(data)
         this.data = data,
+        this.comments = data.comments
         this.constructor.all.push(this)
     }
 
@@ -27,6 +29,25 @@ class User {
         modal.open()
           modal.main.innerHTML = `<p id="greet-user">Welcome, ${user.username}! </p>`
           modal.addCloseEventListener()
+          User.renderProfile()
+          }
+
+
+          static renderProfile()  {
+            
+            modal.main.innerHTML += `
+            <img src="https://www.larvalabs.com/cryptopunks/cryptopunk100.png"\>
+            <h1> My comments </h1>`
+            let comments = user.comments.map(comment => {
+              modal.main.innerHTML += `
+              <p>${comment.text}</p>
+              `
+            
+            })
+          modal.main.innerHTML += `<h1> My punks </h1>`
+          //  modal.close()
+            
+            console.log('line 42')
           }
 
           
