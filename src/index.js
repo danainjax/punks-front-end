@@ -73,7 +73,7 @@ document.querySelector('#find-a-punk').addEventListener('click', (e) => {
     if (user != undefined) {
       handleFindAPunkClick()
     } else {
-      console.log('login')
+      showLoginForm()
     }
   
   })

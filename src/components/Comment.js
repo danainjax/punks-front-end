@@ -26,14 +26,12 @@ class Comment {
   };
 
   static submitForm() {
-    console.log(this);
     const id = document.querySelector("#show").dataset.id;
     const submitButton = document.querySelector("#submit-comment");
     const commentForm = document.querySelector("form");
-    console.log(commentForm);
+    
     submitButton.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log(commentForm.comment.value);
       const newComment = {
         text: commentForm.comment.value,
         punk_id: id,
