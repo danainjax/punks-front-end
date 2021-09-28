@@ -9,8 +9,9 @@ class Like {
     const likes = document.querySelectorAll(".likes");
     for (const like of likes) {
       like.addEventListener("click", (e) => {
-        console.log(e.target.dataset.id-1);
-        if (e.target.innerText == "♡") {
+        e.preventDefault()
+        
+        // if (e.target.innerText == "♡") {
           e.target.innerText = "🖤";
           const newLike = {
             punk_id:  e.target.dataset.id,
@@ -19,11 +20,17 @@ class Like {
 
           }
           new Like(like)
-          api.createLike(newLike).then(console.log)
-        } else {
-          e.target.innerText = "♡";
-        }
-      });
-    }
+          api.createLike(newLike).then(resp => {
+            console.log(resp)
+            const likes = document.getElementById('all-likes')
+            console.log(e.target.previousElementSibling.innerText = `${e.target.previousElementSibling.dataset.id ++} likes`)
+            // likes.innerText = `${likes} +1 likes`
+          }) 
+      //   } else {
+      //     e.target.innerText = "♡";
+      //   }
+      // ;
+    })
+  }
   }
 }

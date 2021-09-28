@@ -34,20 +34,22 @@ class User {
 
 
           static renderProfile()  {
-            
-            modal.main.innerHTML += `
-            <img src="https://www.larvalabs.com/cryptopunks/cryptopunk100.png"\>
-            <h1> My comments </h1>`
-            let comments = user.comments.map(comment => {
+            if (user.username != undefined){
               modal.main.innerHTML += `
-              <p>${comment.text}</p>
-              `
+              <img src="https://www.larvalabs.com/cryptopunks/cryptopunk100.png"\>
+              <h1> My comments </h1>`
+              let comments = user.comments.map(comment => {
+                modal.main.innerHTML += `
+                <p>${comment.text}</p>
+                `
+              
+              })
+            modal.main.innerHTML += `<h1> My punks </h1>`
+            //  modal.close()
+            } else {
+              showLoginForm()
+            }
             
-            })
-          modal.main.innerHTML += `<h1> My punks </h1>`
-          //  modal.close()
-            
-            console.log('line 42')
           }
 
           

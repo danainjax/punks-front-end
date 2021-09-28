@@ -31,13 +31,14 @@ class Punk {
     });
   };
   renderCard = () => {
-    const { id, punktype, image, accessories, comments } = this;
+    const { id, punktype, image, accessories, comments, likes } = this;
     document.querySelector(".punk-container").innerHTML += `
                   <div class="punk-card" data-id=${id}>
                       <div class="flip-card">
                           <div class="flip-card-inner">
                               <div class="flip-card-front">
                                   <img src=${image} alt="punkImage"/>
+                                  <p class ="likes" id="all-likes" data-id=${likes.length}> ${likes.length} likes</p>
                                   <p class="likes" id="likes" data-id=${id}> ♡ </p>
                                   <p class="punk-number"> Punk number ${parseInt(id - 1)}</p>
                                   <p class="punktype">${punktype}</p>
@@ -111,9 +112,11 @@ class Punk {
     punkId = parseInt(punkId) + 1
     api.PunkByNumber(punkId).then((punk => new Punk(punk)))
     clear()
+    modal.main.innerHTML = ""
+    
     
     this.getPunks()
-   
+  //  modal.main.innerHTML = ""
     
 
   })

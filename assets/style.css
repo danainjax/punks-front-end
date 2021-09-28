@@ -39,6 +39,7 @@ h2 {
     padding-bottom: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
+    
     /* display: none; */
 }
 .punk-card:hover {
@@ -53,6 +54,16 @@ img {
   .likes {
       text-align: right;
       margin-right: 30px;
+     
+  }
+
+  #likes {
+    font-size: 25px;
+    color: red;
+  }
+
+  #likes:hover {
+    box-shadow: 20px 20px 30px 10px #ff04b4;
   }
 
   /* flip card attributed to https://www.w3schools.com/howto/howto_css_flip_card.asp */
