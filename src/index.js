@@ -28,10 +28,17 @@ document.querySelector("form").addEventListener("submit", User.handleUsernameSub
 
 }
 
-document.querySelector('#login').addEventListener('click', showLoginForm)
+
 
 let user;
 
+document.querySelector('#login').addEventListener('click', (e) => {
+  if (user == undefined || user.username == undefined) {
+    showLoginForm()
+  } else {
+    console.log(user.username)
+  }
+})
 
 function clear() {
   main.innerHTML = "";
@@ -48,8 +55,8 @@ handleLogOutClick = () => {
 }
 
 
-handleFindAPunkClick = (e) => {
-  e.preventDefault()
+handleFindAPunkClick = () => {
+  
   clear()
   modal.open()
   modal.addCloseEventListener()
@@ -61,7 +68,15 @@ document.querySelector('#logout').addEventListener('click', handleLogOutClick)
 
 document.querySelector('#get-punks').addEventListener('click', Punk.renderIndex)
 
-document.querySelector('#find-a-punk').addEventListener('click', handleFindAPunkClick)
+document.querySelector('#find-a-punk').addEventListener('click', (e) => {
+    e.preventDefault()
+    if (user != undefined) {
+      handleFindAPunkClick()
+    } else {
+      console.log('login')
+    }
+  
+  })
 
 document.querySelector('#my-account').addEventListener('click', (e) => {
   e.preventDefault()

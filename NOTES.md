@@ -1,21 +1,27 @@
 Project build notes
 
-Branched to my-account to work on a page that shows user account, likes, comments, and potentially contracted punks in a profile
-
-COMMENTS-
-
-
-Pseudo CODE:
-COMMENTS currently appear below the Punk info, move them to another HTML element after using a modal to enter a comment. Either use the back of the card or some element that slides out.
+#FIND A PUNK
+Can get the punk by number from the API call and render to the dom, but doesn't persist. When I attached the event listener to the Punks in the nav bar, it is not displaying the new object, because...it is not being added to the Punks index?
 
 
+#COMMENTS-
+Comments are saving to the DB and the DOM is getting updated, but updating with e.target instead of the response from the JSON, fix that so that refresh is not needed. Add a hyperlink or hover to a comment and then work on update and delete functionality.
+        Pseudo CODE:
+        COMMENTS currently appear below the Punk info, move them to another HTML element after using a modal to enter a comment. Either use the back of the card or some element that slides out.
 
-1. Work on finding a punk by number
-    Grabbing the punkID, creating a new Punk object on the front end, calling getPunks to render the punk on the index page, but the number parsing in the h1 is now breaking, need to find a way to parse the ID without it breaking when the number goes over 100. 
-    
-    Also need to handle how to save the find a punk past page refresh. Maybe save all the Find A Punks in to the index as well? Currently limiting to 25, But would need to add that punk to the Punk.all.limit(25). Maybe an if statement? or concatenate?
+#USER-
+User data is wiped when page refreshes, fix that, and persist current user in db
 
-    *IN my DB the punks are stored from id 1 to id 10000, in the api I am seeding the db with, they are stored from 000 - 9999. Need to solve for that.*
+#LIKES-
+Increment likes based on click
+User can like a punk only once
+Punk can have many likes. Show the total number of likes 
+Make the heart stay filled in when navigating to another view.
+
+
+
+
+   
 
 ******** 2. Move comments to a modal **********
 

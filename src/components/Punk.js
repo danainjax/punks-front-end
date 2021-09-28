@@ -8,6 +8,7 @@ class Punk {
     this.accessories = JSON.parse(data.accessories);
     this.comments = data.comments.map((comment) => new Comment(comment));
     this.likes = data.likes.map((like) => new Like(like));
+    this.user = data.user.username;
     this.constructor.all.push(this);
     
   }
@@ -31,7 +32,7 @@ class Punk {
     });
   };
   renderCard = () => {
-    const { id, punktype, image, accessories, comments, likes } = this;
+    const { id, punktype, image, accessories, comments, likes, user } = this;
     document.querySelector(".punk-container").innerHTML += `
                   <div class="punk-card" data-id=${id}>
                       <div class="flip-card">
@@ -42,8 +43,9 @@ class Punk {
                                   <p class="likes" id="likes" data-id=${id}> ♡ </p>
                                   <p class="punk-number"> Punk number ${parseInt(id - 1)}</p>
                                   <p class="punktype">${punktype}</p>
-                                  <p class="accessories">${accessories}
-                                  <p class="comments">I have ${this.comments.length} comments on my wall</p>
+                                  <p class="accessories">${accessories}</p>
+                                  <p class="user">Contracted by: ${user}</p>
+                                  
                               </div>
                               <div class="flip-card-back">
                                   <h1 id="punk-number" dataset-id= ${id}>PUNK NUMBER ${parseInt(id + 99)}</h1>

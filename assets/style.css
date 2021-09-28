@@ -42,6 +42,7 @@ h2 {
     
     /* display: none; */
 }
+
 .punk-card:hover {
     box-shadow: 20px 20px 30px 10px rgba(0,0,0,0.3);
   }
@@ -214,3 +215,11 @@ li a:hover {
 
 .active {
   background-color: #ff04b4;
+}
+
+.small-punk {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}

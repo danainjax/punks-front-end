@@ -42,9 +42,13 @@ class Comment {
       };
       api
         .createComment(newComment)
-        .then((comment) => this.handleComment(comment));
+        .then((comment) => {
+          console.log(comment)
+          this.handleComment(comment);
     });
+    })
   }
+  
 
   render = (comment) => {
     console.log(this.data.text)
@@ -64,6 +68,7 @@ class Comment {
     </div>`
     
     document.querySelector("form").reset();
+    
 
   };
 
