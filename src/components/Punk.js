@@ -38,7 +38,7 @@ class Punk {
                           <div class="flip-card-inner">
                               <div class="flip-card-front">
                                   <img src=${image} alt="punkImage"/>
-                                  <p class ="likes" id="all-likes"> ${likes.length} likes</p>
+                                  <p class ="likes" id="all-likes" data-id=${likes.length}> ${likes.length} likes</p>
                                   <p class="likes" id="likes" data-id=${id}> ♡ </p>
                                   <p class="punk-number"> Punk number ${parseInt(id - 1)}</p>
                                   <p class="punktype">${punktype}</p>

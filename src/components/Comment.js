@@ -46,24 +46,28 @@ class Comment {
     });
   }
 
+  render = (comment) => {
+    console.log(this.data.text)
+    document.querySelector(".container").innerHTML += `
+    <div class="card">
+      <p>${this.data.text}</p>
+    </div>`
+   
+    
+  }
+
   static handleComment = (comment) => {
     new Comment(comment);
     document.querySelector(".container").innerHTML += `
     <div class="card">
       <p>${comment.text}</p>
     </div>`
+    
     document.querySelector("form").reset();
 
   };
 
 
- render = (comment) => {
-    console.log(this.data.text)
-    document.querySelector(".container").innerHTML += `
-    <div class="card">
-      <p>${this.data.text}</p>
-    </div>`
-    
-  }
+  
   
 }
