@@ -112,6 +112,8 @@ class Punk {
     punkId = parseInt(punkId) + 1
     api.PunkByNumber(punkId).then((punk => new Punk(punk)))
     clear()
+    modal.main.innerHTML = ""
+    
     
     this.getPunks()
   //  modal.main.innerHTML = ""
