@@ -26,6 +26,11 @@ class Like {
             console.log(e.target.previousElementSibling.innerText = `${e.target.previousElementSibling.dataset.id ++} likes`)
             // likes.innerText = `${likes} +1 likes`
           }) 
+          Punk.all = []
+          api.fetchPunks().then((punks) => {
+            punks.forEach((punk) => new Punk(punk))
+          })
+        
       //   } else {
       //     e.target.innerText = "♡";
       //   }

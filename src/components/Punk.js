@@ -5,9 +5,10 @@ class Punk {
     this.id = data.id;
     this.punktype = data.punktype;
     this.image = data.image;
+    // this.data = data
     this.accessories = JSON.parse(data.accessories);
-    this.comments = data.comments.map((comment) => new Comment(comment));
-    this.likes = data.likes.map((like) => new Like(like));
+    this.comments = data.comments.map((comment) => new Comment(comment, this));
+    this.likes = data.likes.map((like) => new Like(like, this));
     this.user = data.user.username;
     this.constructor.all.push(this);
     
@@ -32,7 +33,7 @@ class Punk {
     });
   };
   renderCard = () => {
-    const { id, punktype, image, accessories, comments, likes, user } = this;
+    const { id, punktype, image, accessories, comments, likes, user} = this;
     document.querySelector(".punk-container").innerHTML += `
                   <div class="punk-card" data-id=${id}>
                       <div class="flip-card">
@@ -74,6 +75,7 @@ class Punk {
 
   renderShow = () => {
     const { id, punktype, image, accessories, comments } = this;
+    console.log(comments)
     main.innerHTML = `
     <div class="show">
       <img src=${image} alt="punk" />
@@ -86,7 +88,10 @@ class Punk {
     </div>
     `;
     Comment.showForm();
+    
+    // this.renderShow()
     this.comments.forEach((comment) => comment.render());
+    
     const back = document.getElementById("back");
     back.addEventListener("click", (e) => {
       e.preventDefault();
@@ -96,6 +101,19 @@ class Punk {
   };
 
 
+  static renderCommentData = () => {
+    const { id, punktype, image, accessories, comments } = this;
+    console.log(comments)
+    
+      document.querySelector(".container").innerHTML += `
+      <div class="card">
+        <p>${comment.text}</p>
+      </div>`
+    }
+    
+   
+    
+  
 
   static punkByNumberForm = () => {
     modal.main.innerHTML += `
