@@ -49,10 +49,13 @@ class Comment {
           console.log(comment)
           // console.log(newComment.punk_id, this.comment.punk)
           this.handleComment(comment);
+         const thisPunk = Punk.all.find(punk => punk.id == comment.punk_id)
+         console.log(thisPunk)
+          
           Punk.all = []
-          api.fetchPunks().then((punks) => {
-            punks.forEach((punk) => new Punk(punk))
-          })
+          // api.fetchPunks().then((punks) => {
+          //   punks.forEach((punk) => new Punk(punk))
+          // })
         })
           // Punk.renderCommentData(comment)
           

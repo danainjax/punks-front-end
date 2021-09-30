@@ -30,13 +30,14 @@ document.querySelector("form").addEventListener("submit", User.handleUsernameSub
 
 
 
-let user;
+let user
 
 document.querySelector('#login').addEventListener('click', (e) => {
-  if (user == undefined || user.username == undefined) {
+  if (!localStorage.currentLoggedIn) {
     showLoginForm()
   } else {
-    console.log(user.username)
+    alert(`Already logged in ${localStorage.currentLoggedIn}`)
+    Punk.getPunks()
   }
 })
 
@@ -49,6 +50,7 @@ handleLogOutClick = () => {
   user = "";
   User.all = []
   clear();
+  localStorage.clear()
   main.innerHTML = `<h2>PUNKS</h2>
   <img src="assets/images/allPunks.png"/>
   `
@@ -70,7 +72,7 @@ document.querySelector('#get-punks').addEventListener('click', Punk.renderIndex)
 
 document.querySelector('#find-a-punk').addEventListener('click', (e) => {
     e.preventDefault()
-    if (user != undefined) {
+    if (localStorage.currentLoggedIn) {
       handleFindAPunkClick()
     } else {
       showLoginForm()
@@ -80,7 +82,7 @@ document.querySelector('#find-a-punk').addEventListener('click', (e) => {
 
 document.querySelector('#my-account').addEventListener('click', (e) => {
   e.preventDefault()
-  if (user != undefined) {
+  if (localStorage.currentLoggedIn) {
     User.greetUser()
   } else {
     showLoginForm()

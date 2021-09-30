@@ -16,6 +16,8 @@ class User {
           api.findOrCreateUser(e.target.username.value).then((data) => {
               user = data
               new User(data)
+            localStorage.setItem("currentLoggedIn", e.target.username.value)
+                            
               modal.main.innerHTML = ""
               clear();
               Ticker.getTicker()
@@ -30,14 +32,14 @@ class User {
 
       static greetUser = () => {
         modal.open()
-          modal.main.innerHTML = `<p id="greet-user">Welcome, ${user.username}! </p>`
+          modal.main.innerHTML = `<p id="greet-user">Welcome, ${localStorage.currentLoggedIn}! </p>`
           modal.addCloseEventListener()
           User.renderProfile()
           }
 
 
           static renderProfile()  {
-            if (user.username != undefined){
+            if (localStorage.currentLoggedIn ){
               modal.main.innerHTML += `
               <img src="https://www.larvalabs.com/cryptopunks/cryptopunk100.png"\>
               <h1> My comments </h1>`
@@ -49,7 +51,7 @@ class User {
               modal.main.innerHTML += `<h1> My punks </h1>
               `
                 let punks = user.punks.forEach(punk => {
-                 if (user.username != "Larva Labs"){
+                 if (user.username != "Larva Labs" || localStorage.currentLoggedIn){
                   modal.main.innerHTML += `
                   <p>${punk.id}</p>
                   `
