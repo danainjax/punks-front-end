@@ -53,9 +53,9 @@ class Comment {
          console.log(thisPunk)
           
           Punk.all = []
-          // api.fetchPunks().then((punks) => {
-          //   punks.forEach((punk) => new Punk(punk))
-          // })
+          api.fetchPunks().then((punks) => {
+            punks.forEach((punk) => new Punk(punk))
+          })
         })
           // Punk.renderCommentData(comment)
           
