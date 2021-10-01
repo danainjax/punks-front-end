@@ -10,12 +10,12 @@ Comments are saving to the DB and the DOM is getting updated, but updating with 
         COMMENTS currently appear below the Punk info, move them to another HTML element after using a modal to enter a comment. Either use the back of the card or some element that slides out.
 
 #USER-
-User data is wiped when page refreshes, fix that, and persist current user in db
+User data is wiped when page refreshes, fix that, and persist current user in db- started working on Session storage to fix this
 
 #LIKES-
-Increment likes based on click
+[x] Increment likes based on click
 User can like a punk only once
-Punk can have many likes. Show the total number of likes 
+[x] Punk can have many likes. Show the total number of likes 
 Make the heart stay filled in when navigating to another view.
 
 
@@ -64,7 +64,7 @@ Use a modal to [2] Add a contract
 
 
 
-[ ]    Create a like 
+[X]    Create a like 
 
 [ ]    Create a Contract/Sale
 
@@ -80,7 +80,7 @@ Use a modal to [2] Add a contract
 B. Decide on a second model, (likes, comments, etc. - pick 1 to start)
     [X] a.  ***Comments - currently working on Comments
     [X] b. User 
-    [ ] c. Like
+    [X] c. Like
     [ ] d. Buy/Sell/Trade/Contract
     
 
@@ -105,8 +105,9 @@ Requirements:
 [X] The JavaScript application must use Object Oriented JavaScript (classes) to encapsulate related data and behavior.
 
 [X] The domain model served by the Rails backend must include a resource with at least one has-many relationship. For example, if you were building an Instagram clone, you might display a list of photos with associated comments.
-    Users has_many :comments
-    Punks has_many :comments
+    User has_many :comments
+    Punk has_many :comments
+    Punk has_many :likes
     Comments belong to :user, :punk
 
 [X] The backend and frontend must collaborate to demonstrate Client-Server Communication. Your application should have at least 3 AJAX calls, covering at least 2 of Create, Read, Update, and Delete (CRUD). Your client-side JavaScript code must use fetch with the appropriate HTTP verb, and your Rails API should use RESTful conventions.
@@ -114,6 +115,6 @@ Requirements:
     *See Fetch calls above
 
 JavaScript
-[ ] Use classes and functions to organize your code into reusable pieces.
+[X] Use classes and functions to organize your code into reusable pieces.
 [X] Translate JSON responses into JavaScript model objects using ES6 class or constructor function syntax.
 [ ] Use ES6 features when appropriate (e.g. arrow functions, let & const, rest and spread syntax).
