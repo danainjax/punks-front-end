@@ -16,7 +16,7 @@ class User {
           api.findOrCreateUser(e.target.username.value).then((data) => {
               user = data
               new User(data)
-            localStorage.setItem("currentLoggedIn", e.target.username.value)
+            localStorage.setItem("currentLoggedIn", JSON.stringify(user))
                             
               modal.main.innerHTML = ""
               clear();
@@ -32,7 +32,7 @@ class User {
 
       static greetUser = () => {
         modal.open()
-          modal.main.innerHTML = `<p id="greet-user">Welcome, ${localStorage.currentLoggedIn}! </p>`
+          modal.main.innerHTML = `<p id="greet-user">Welcome, ${JSON.parse(localStorage.currentLoggedIn).username}! </p>`
           modal.addCloseEventListener()
           User.renderProfile()
           }
