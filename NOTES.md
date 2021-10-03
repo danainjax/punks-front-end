@@ -1,5 +1,7 @@
 Project build notes
 
+[ ] Back button (Punk.all is emptying and pressing back button fails to show any punks because array is not populated)
+
 #FIND A PUNK
 Can get the punk by number from the API call and render to the dom, but doesn't persist. When I attached the event listener to the Punks in the nav bar, it is not displaying the new object, because...it is not being added to the Punks index?
 
