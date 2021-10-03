@@ -29,12 +29,17 @@ class Punk {
       Like.addLike();
       punkContainer.addEventListener("click", this.handleIndexClick);
     });
+    if (document.body.classList == "dark-theme") {
+      document
+        .querySelectorAll(".punk-card")
+        .forEach((card) => (card.classList = "punk-card-dark-theme"));
+    }
   };
   renderCard = () => {
     const { id, punktype, image, accessories, comments, likes, user } = this;
 
     document.querySelector(".punk-container").innerHTML += `
-                  <div class="punk-card" data-id=${parseInt(id)-1}>
+                  <div id="punk-card" class="punk-card" data-id=${parseInt(id)-1}>
                       <div class="flip-card">
                           <div class="flip-card-inner">
                               <div class="flip-card-front">
@@ -70,11 +75,12 @@ class Punk {
     if (
       e.target.tagName === "IMG" ||
       e.target.classList.contains("punk-number")
-    ) {
-      const id = e.target.closest(".punk-card").dataset.id;
+    ){
+      const id = e.target.closest("#punk-card").dataset.id;
       this.find(parseInt(id) +1).renderShow();
+    } 
     }
-  };
+  
 
   static find = (id) => this.all.find((punk) => punk.id == id);
 
