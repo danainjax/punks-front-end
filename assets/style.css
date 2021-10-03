@@ -21,6 +21,11 @@ h2 {
     height: 50px;
     
 }
+.dark-theme {
+  background-color: black;
+  color: white;
+  box-shadow: 0 4px 8px 0 #ff04b4(0,0,0,0.2)
+}
 
 .punk-container {
     display: flex;
@@ -41,6 +46,22 @@ h2 {
     margin-bottom: 20px;
     
     /* display: none; */
+}
+.punk-card-dark-theme{
+    box-shadow: 10px 10px 10px 10px rgba(100, 100, 100, 130);
+    transition: 0.3s;
+    border-radius: 10px;
+    border-top: 20px;
+    width: 375px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.punk-card-dark-theme:hover {
+  box-shadow: 20px 20px 30px 10px rgba(100,100,100,130);
 }
 
 .punk-card:hover {
@@ -175,10 +196,13 @@ img {
   cursor: pointer;
 }
 
-body.dark-theme{
+.dark-theme {
   background-color: black;
   color: white;
+  
 }
+
+
 
 marquee {
   font-size: 40px;

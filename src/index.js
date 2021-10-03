@@ -6,9 +6,16 @@ const tickerDiv = document.querySelector(".ticker");
 
 handleDarkTheme = () => {
   if (document.body.classList == "") {
-    document.body.classList.add("dark-theme");
+    document.body.classList.add("dark-theme")
+    modal.main.classList.add("dark-theme")
+    if (document.body.classList == "dark-theme") {
+      console.log('hitting the conditional')
+      document.querySelectorAll('.punk-card').forEach(card => card.classList ='punk-card-dark-theme')
+    }
   } else {
     document.body.classList = "";
+    modal.main.classList = "";
+    document.querySelectorAll('.punk-card-dark-theme').forEach(card => card.classList ='punk-card')
   }
 };
 document
@@ -36,6 +43,10 @@ document.querySelector("#login").addEventListener("click", (e) => {
   } else {
     alert(`Already logged in ${localStorage.currentLoggedIn}`);
     Punk.getPunks();
+    if (document.body.classList == "dark-theme") {
+      console.log('hitting the conditional')
+      document.querySelectorAll('.punk-card').forEach(card => card.classList ='punk-card-dark-theme')
+    }
   }
 });
 

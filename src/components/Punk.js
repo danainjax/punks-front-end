@@ -15,6 +15,7 @@ class Punk {
     api.fetchPunks().then((punks) => {
       punks.forEach((punk) => new Punk(punk));
       this.renderIndex();
+      
     });
   }
 
