@@ -1,8 +1,5 @@
 Project build notes
 
-[X] Back button (Punk.all is emptying and pressing back button fails to show any punks because array is not populated) removed Punk.all =[] in the show page event listener
-[X] Dark mode. Unable to read text in modals since modals are white, also need to fix shadow for when in dark mode, make it a lighter color
-
 [ ] Update Readmes on both repos for assessment
 [ ] Another blog post
 [ ] Updated Video of development work since submitted
@@ -12,42 +9,23 @@ Can get the punk by number from the API call and render to the dom, but doesn't 
 
 
 #COMMENTS-
-Comments are saving to the DB and the DOM is getting updated, but updating with e.target instead of the response from the JSON, fix that so that refresh is not needed. Add a hyperlink or hover to a comment and then work on update and delete functionality.
+ Work on edit/update and delete functionality.
         Pseudo CODE:
         COMMENTS currently appear below the Punk info, move them to another HTML element after using a modal to enter a comment. Either use the back of the card or some element that slides out.
-
-#USER-
-User data is wiped when page refreshes, fix that, and persist current user in db- started working on Session storage to fix this
-
-#LIKES-
-[x] Increment likes based on click
-User can like a punk only once
-[x] Punk can have many likes. Show the total number of likes 
-[ ] Make the heart stay filled in when navigating to another view.
-
-
-
-
-   
-
-******** 2. Move comments to a modal **********
-
-3. Add a contract
-4. Display the user account page, work on user model
-5. Get likes working 'counter cache'
-
-MODAL
-
-Use a modal to [1] Add a comment
-Use a modal to [2] Add a contract
-
-
 [ ] When comments are added, instead of adding to bottom of show page, pop a modal or some other html element
 
 [ ] When you add the comments to the show view, flip the card over.
 [ ] Don't let the comment box appear more than once, check what event we are listening for
 
-[X] Build a log out // Determine if login persists beyond page refresh
+#USER-
+User data is wiped when page refreshes, fix that, and persist current user in db- started working on Session storage to fix this
+    [ ] Account page: Make sure comments are displaying, and any Punks that are liked/contracted
+
+#LIKES-
+[x] Increment likes based on click
+[ ] User can like a punk only once
+[x] Punk can have many likes. Show the total number of likes 
+[ ] Make the heart stay filled in when navigating to another view.
 
 
 *Fetch calls:
@@ -104,10 +82,9 @@ B. MODELS
 
 
 HTML
-[ ]  1. Modal - working on implementing with Comments and Contract
+[ ] 1. Modal - working on implementing with Comments and Contract
 [ ] 2. Flip card - need to solve for ability to flip when I want, not just all the time
-[ ] 3. Background animation - optional
-[X] 4. Nav bar
+[X] 3. Nav bar
 
 Requirements:
 
