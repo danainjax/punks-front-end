@@ -50,48 +50,52 @@ Use a modal to [2] Add a contract
 
 [X] 1. R - Read, Punks displaying on page, fetch to localhost:3000/punks/index
 
-        api.fetchPunks()
+    api.fetchPunks()
 
-[X]   2. C - create a new comment
+[X] 2. C - create a new comment
     Create a comment object on submit of button, pass the object to the fetch POST to the backend, then show the updated Punk card with comments
 
-        api.createComment(newComment)
+    api.createComment(newComment)
 
-[X]  Need to fetch the punks info from db again after creating a new comment, info not updating unless page refreshes 
-    Note, it was working, just wasn't clearing out the Punk.all [] and was viewing the incorrect data. Solved by clearing innerHTML of the div and then clearing static all before calling Punk.getPunks()
+        [X]  Need to fetch the punks info from db again after creating a new comment, info not updating unless page refreshes 
+            Note, it was working, just wasn't clearing out the Punk.all [] and was viewing the incorrect data. Solved by clearing innerHTML of the div and then clearing static all before calling Punk.getPunks()
 
-[X]  3. Create a User
+[X] 3. Create a User
 
     api.findOrCreateUser(e.target.username.value)
 
+[X] 4. Create a like 
+    
+    api.createLike(newLike)
 
-
-[X]    Create a like 
-
-[ ]    Create a Contract/Sale
-
-[X]    4. R - Read, Find PunkByNumber, fetch to localhost:3000/punks/id
+[X] 5. R - Read, Find PunkByNumber, fetch to localhost:3000/punks/id
     Coded the backend so that the json is rendered to punks/id
     Send to show page. Create new punk if it does not exist in the database, render it, if it does.
 
     api.PunkByNumber(punkId)
 
-    5. U - update/edit a comment, like, or sale?
-    6. D - delete a comment, like
+[ ] 6. U - update/edit a comment, like, or sale?
+[ ] 7. D - delete a comment, like
 
-B. Decide on a second model, (likes, comments, etc. - pick 1 to start)
+STRETCH GOAL:
+[ ]    Create a Contract/Sale
+
+B. MODELS
     [X] a.  ***Comments - currently working on Comments
     [X] b. User 
     [X] c. Like
+    [X] d. Ticker
+    [X] e. Modal
+    [X] f. Punk
     [ ] d. Buy/Sell/Trade/Contract
     
 
 [X] C. Build an adpater/service class to handle the api calls.
     ApiService.js
 [X] D. Hit MVP asap, then refactor and branch to add each new feature. One at a time.
-[X]Add a Navbar
-[X] Add API data to show current crypto prices, ETH, bitcoin, etc with graphic and #
-G. Add info pages, to show what CryptoPunks are and why they are important, define what a NFT is, etc. (Christie's article, NY Times article)
+[X] E. Add a Navbar
+[X] F. Add API data to show current crypto prices, ETH, bitcoin, etc with graphic and #
+[ ] G. Add info pages, to show what CryptoPunks are and why they are important, define what a NFT is, etc. (Christie's article, NY Times article)
 
 
 HTML
@@ -107,10 +111,12 @@ Requirements:
 [X] The JavaScript application must use Object Oriented JavaScript (classes) to encapsulate related data and behavior.
 
 [X] The domain model served by the Rails backend must include a resource with at least one has-many relationship. For example, if you were building an Instagram clone, you might display a list of photos with associated comments.
-    User has_many :comments
-    Punk has_many :comments
+    [X] User has_many :comments
+    [X] Punk has_many :comments
     Punk has_many :likes
-    Comments belong to :user, :punk
+    [X] Comments belong to :user, :punk
+    User has_many :likes
+    Like belongs to :user, :punk
 
 [X] The backend and frontend must collaborate to demonstrate Client-Server Communication. Your application should have at least 3 AJAX calls, covering at least 2 of Create, Read, Update, and Delete (CRUD). Your client-side JavaScript code must use fetch with the appropriate HTTP verb, and your Rails API should use RESTful conventions.
 
