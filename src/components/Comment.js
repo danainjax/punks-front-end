@@ -57,7 +57,7 @@ class Comment {
   }
 
   render = (comment) => {
-    const { id, text, user_id } = this.data;s
+    const { id, text, user_id } = this.data;
     document.querySelector(".container").innerHTML += `
     <div class="card">
       <p>${text}</p>
