@@ -99,7 +99,6 @@ class Punk {
     const back = document.getElementById("back");
     back.addEventListener("click", (e) => {
       e.preventDefault();
-      Punk.all = []
       Punk.renderIndex();
     });
   };

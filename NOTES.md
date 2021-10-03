@@ -1,6 +1,6 @@
 Project build notes
 
-[ ] Back button (Punk.all is emptying and pressing back button fails to show any punks because array is not populated)
+[X] Back button (Punk.all is emptying and pressing back button fails to show any punks because array is not populated) removed Punk.all =[] in the show page event listener
 [X] Dark mode. Unable to read text in modals since modals are white, also need to fix shadow for when in dark mode, make it a lighter color
 
 [ ] Update Readmes on both repos for assessment
@@ -47,7 +47,7 @@ Use a modal to [2] Add a contract
 [ ] When you add the comments to the show view, flip the card over.
 [ ] Don't let the comment box appear more than once, check what event we are listening for
 
-[ ] Build a log out // Determine if login persists beyond page refresh
+[X] Build a log out // Determine if login persists beyond page refresh
 
 
 *Fetch calls:

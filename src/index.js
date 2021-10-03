@@ -6,16 +6,19 @@ const tickerDiv = document.querySelector(".ticker");
 
 handleDarkTheme = () => {
   if (document.body.classList == "") {
-    document.body.classList.add("dark-theme")
-    modal.main.classList.add("dark-theme")
+    document.body.classList.add("dark-theme");
+    modal.main.classList.add("dark-theme");
     if (document.body.classList == "dark-theme") {
-      console.log('hitting the conditional')
-      document.querySelectorAll('.punk-card').forEach(card => card.classList ='punk-card-dark-theme')
+      document
+        .querySelectorAll(".punk-card")
+        .forEach((card) => (card.classList = "punk-card-dark-theme"));
     }
   } else {
     document.body.classList = "";
     modal.main.classList = "";
-    document.querySelectorAll('.punk-card-dark-theme').forEach(card => card.classList ='punk-card')
+    document
+      .querySelectorAll(".punk-card-dark-theme")
+      .forEach((card) => (card.classList = "punk-card"));
   }
 };
 document
@@ -41,11 +44,15 @@ document.querySelector("#login").addEventListener("click", (e) => {
   if (!localStorage.currentLoggedIn) {
     showLoginForm();
   } else {
-    alert(`Already logged in ${localStorage.currentLoggedIn}`);
-    Punk.getPunks();
+    alert(
+      `${
+        JSON.parse(localStorage.currentLoggedIn).username
+      } is already logged in.`
+    );
     if (document.body.classList == "dark-theme") {
-      console.log('hitting the conditional')
-      document.querySelectorAll('.punk-card').forEach(card => card.classList ='punk-card-dark-theme')
+      document
+        .querySelectorAll(".punk-card")
+        .forEach((card) => (card.classList = "punk-card-dark-theme"));
     }
   }
 });
@@ -74,9 +81,15 @@ handleFindAPunkClick = () => {
 
 document.querySelector("#logout").addEventListener("click", handleLogOutClick);
 
-document
-  .querySelector("#get-punks")
-  .addEventListener("click", Punk.renderIndex);
+document.querySelector("#get-punks").addEventListener("click", (e) => {
+  if (!user) {
+    showLoginForm();
+  } else if ((Punk.all = [])) {
+    Punk.getPunks();
+  } else {
+    Punk.renderIndex();
+  }
+});
 
 document.querySelector("#find-a-punk").addEventListener("click", (e) => {
   e.preventDefault();
