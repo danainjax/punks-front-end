@@ -1,6 +1,7 @@
 Project build notes
 
 [ ] Back button (Punk.all is emptying and pressing back button fails to show any punks because array is not populated)
+[ ] Dark mode. Unable to read text in modals since modals are white, also need to fix shadow for when in dark mode, make it a lighter color
 
 [ ] Update Readmes on both repos for assessment
 [ ] Another blog post
