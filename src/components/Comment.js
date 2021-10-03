@@ -25,7 +25,8 @@ class Comment {
   };
 
   static submitForm() {
-    const id = document.querySelector("#show").dataset.id;
+    const id = parseInt(document.querySelector("#show").dataset.id) + 1;
+    //this is because the Punks are numbered 0 - 9999 in the api and in the real world, but in rails db they are 1 - 10000
     const submitButton = document.querySelector("#submit-comment");
     const commentForm = document.querySelector("form");
 

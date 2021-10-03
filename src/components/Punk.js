@@ -33,7 +33,7 @@ class Punk {
     const { id, punktype, image, accessories, comments, likes, user } = this;
 
     document.querySelector(".punk-container").innerHTML += `
-                  <div class="punk-card" data-id=${id}>
+                  <div class="punk-card" data-id=${parseInt(id)-1}>
                       <div class="flip-card">
                           <div class="flip-card-inner">
                               <div class="flip-card-front">
@@ -41,7 +41,7 @@ class Punk {
                                   <p class ="likes" id="all-likes" data-id=${
                                     likes.length
                                   }> ${likes.length} likes</p>
-                                  <p class="likes" id="likes" data-id=${id}>♡</p>
+                                  <p class="likes" id="likes" data-id=${parseInt(id) -1}>♡</p>
                                   <p class="punk-number"> Punk number ${parseInt(
                                     id - 1
                                   )}</p>
@@ -71,7 +71,7 @@ class Punk {
       e.target.classList.contains("punk-number")
     ) {
       const id = e.target.closest(".punk-card").dataset.id;
-      this.find(id).renderShow();
+      this.find(parseInt(id) +1).renderShow();
     }
   };
 
@@ -82,7 +82,7 @@ class Punk {
     main.innerHTML = `
     <div class="show">
       <img src=${image} alt="punk" />
-      <h1 id="show" data-id =${id}> Punk number ${parseInt(id) - 1}</h1>
+      <h1 id="show" data-id =${parseInt(id) -1}> Punk number ${parseInt(id) -1}</h1>
       <p class="punktype">${punktype}</p>
       <p class="accessories">${accessories}</p>
       <div class="container"></div>
