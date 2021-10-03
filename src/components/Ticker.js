@@ -10,7 +10,7 @@ class Ticker {
       .then((resp) => {
         const eth = resp.ticker;
         const ticker = document.createElement("marquee");
-        ticker.innerHTML = `Crypto currency...........${eth.base}...${eth.target}...${eth.price}...${eth.volume}...${eth.change}`;
+        ticker.innerHTML = `Crypto currency...........${eth.base}...${eth.target}...Price: $${eth.price}...Volume: ${eth.volume}...Change: ${eth.change}`;
         tickerDiv.appendChild(ticker);
       });
   };
