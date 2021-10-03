@@ -1,11 +1,7 @@
 class Comment {
-  // static all = [];
   constructor(data, punk) {
     this.data = data;
     this.punk = punk;
-    // console.log(punk)
-    // this.constructor.all.push(this);
-    // Punk.all.push(this)
   }
 
   static showForm() {
@@ -32,65 +28,48 @@ class Comment {
     const id = document.querySelector("#show").dataset.id;
     const submitButton = document.querySelector("#submit-comment");
     const commentForm = document.querySelector("form");
-    
+
     submitButton.addEventListener("click", (e) => {
       e.preventDefault();
-      
+
       const newComment = {
         text: commentForm.comment.value,
         punk_id: id,
         user_id: user.id,
-        
       };
-      console.log(newComment)
-      api
-        .createComment(newComment)
-        .then((comment) => {
-          console.log(comment)
-          // console.log(newComment.punk_id, this.comment.punk)
-          this.handleComment(comment);
-         const thisPunk = Punk.all.find(punk => punk.id == comment.punk_id)
-         console.log(thisPunk)
-          
-          Punk.all = []
-          api.fetchPunks().then((punks) => {
-            punks.forEach((punk) => new Punk(punk))
-          })
-        })
-          // Punk.renderCommentData(comment)
-          
-        
-    })
+
+      api.createComment(newComment).then((comment) => {
+        this.handleComment(comment);
+        Punk.all = [];
+        api.fetchPunks().then((punks) => {
+          punks.forEach((punk) => new Punk(punk));
+        });
+        // const thisPunk = Punk.all.find((punk) => punk.id == comment.punk_id);
+        // console.log(thisPunk);
+        // console.log(thisPunk.comments.length);
+        // thisPunk.comments.push(comment);
+        // console.log(thisPunk.comments.length);
+
+        // thisPunk.comments.forEach(comment => console.log(comment.data.text))
+      });
+    });
   }
-  
-  
 
   render = (comment) => {
-    const {id, text, user_id} = this.data
-    console.log(text)
+    const { id, text, user_id } = this.data;
+    console.log(text);
     document.querySelector(".container").innerHTML += `
     <div class="card">
       <p>${text}</p>
-    </div>`
-   
-    
-  }
+    </div>`;
+  };
 
   static handleComment = (comment) => {
     new Comment(comment);
-    console.log(comment.text)
     document.querySelector(".container").innerHTML += `
     <div class="card">
       <p>${comment.text}</p>
-    </div>`
-    // Punk.renderCommentData()
-    
+    </div>`;
     document.querySelector("form").reset();
-    
-
   };
-
-
-  
-  
 }
