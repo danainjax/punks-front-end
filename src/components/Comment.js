@@ -41,17 +41,12 @@ class Comment {
 
       api.createComment(newComment).then((comment) => {
         this.handleComment(comment);
+        User.all[0].comments.push(comment)
         Punk.all = [];
         api.fetchPunks().then((punks) => {
           punks.forEach((punk) => new Punk(punk));
         });
-        // const thisPunk = Punk.all.find((punk) => punk.id == comment.punk_id);
-        // console.log(thisPunk);
-        // console.log(thisPunk.comments.length);
-        // thisPunk.comments.push(comment);
-        // console.log(thisPunk.comments.length);
-
-        // thisPunk.comments.forEach(comment => console.log(comment.data.text))
+        
       });
     });
   }
