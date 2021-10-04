@@ -40,7 +40,7 @@ class User {
               <h1> My comments </h1>`;
       let comments = user.comments.forEach((comment) => {
         modal.main.innerHTML += `
-                <p>${comment.text}</p>
+                <p>${comment.text}, Punk Number: ${comment.punk_id}</p>
                 `;
       });
       modal.main.innerHTML += `<h1> My punks </h1>

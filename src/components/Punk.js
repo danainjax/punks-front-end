@@ -68,7 +68,26 @@ class Punk {
                     
                   </div>
                 </div>`;
-  };
+                const userFaves = User.all[0].data.likes
+                console.log(userFaves)
+                userFaves.forEach( fave => {
+                  console.log(fave.punk_id)
+                  const heart = Array.from(document.querySelectorAll('#likes'))
+                  heart.forEach(heart => {
+                    if (heart.dataset.id == fave.punk_id -1){
+                      heart.innerHTML = "🖤"
+                    }
+                  })
+                  
+                  
+                  
+                  }
+      
+                  )
+                  
+                }
+                
+                
 
   static handleIndexClick = (e) => {
     e.preventDefault();
@@ -109,15 +128,15 @@ class Punk {
     });
   };
 
-  static renderCommentData = () => {
-    const { id, punktype, image, accessories, comments } = this;
-    console.log(comments);
+  // static renderCommentData = () => {
+  //   const { id, punktype, image, accessories, comments } = this;
+  //   console.log(comments);
 
-    document.querySelector(".container").innerHTML += `
-      <div class="card">
-        <p>${comment.text}</p>
-      </div>`;
-  };
+  //   document.querySelector(".container").innerHTML += `
+  //     <div class="card">
+  //       <p>${comment.text}</p>
+  //     </div>`;
+  // };
 
   static punkByNumberForm = () => {
     modal.main.innerHTML += `
