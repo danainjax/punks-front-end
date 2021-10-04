@@ -1,6 +1,8 @@
 class Like {
+  static all = []
   constructor(data) {
     this.data = data;
+    this.constructor.all.push(this)
   }
 
   static addLike = () => {
@@ -17,20 +19,14 @@ class Like {
 
         new Like(like);
         api.createLike(newLike).then((resp) => {
-          const likes = document.getElementById("all-likes");
+          User.all[0].likes.push(resp)
           Punk.all = [];
           api.fetchPunks().then((punks) => {
             punks.forEach((punk) => new Punk(punk));
-            const likedPunks = Punk.all.filter(
-              (punk) => punk.likes.length != 0
-            );
             Punk.renderIndex();
-            // const myLikedPunks = likedPunks.filter(punk => punk.likes.data.user_id == user.id)
-            //   console.log(myLikedPunks)
+            
           });
-          // console.log(e.target.innerText);
-          // if (e.target.innerText == "♡") {
-          //   e.target.innerText = "🖤";
+          
         });
       });
     }

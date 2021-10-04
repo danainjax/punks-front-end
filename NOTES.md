@@ -25,7 +25,7 @@ User data is wiped when page refreshes, fix that, and persist current user in db
 [x] Increment likes based on click
 [ ] User can like a punk only once
 [x] Punk can have many likes. Show the total number of likes 
-[ ] Make the heart stay filled in when navigating to another view.
+[X] Make the heart stay filled in when navigating to another view.
 
 
 *Fetch calls:

@@ -69,9 +69,9 @@ class Punk {
                   </div>
                 </div>`;
                 const userFaves = User.all[0].data.likes
-                console.log(userFaves)
+                // console.log(userFaves)
                 userFaves.forEach( fave => {
-                  console.log(fave.punk_id)
+                  // console.log(fave.punk_id)
                   const heart = Array.from(document.querySelectorAll('#likes'))
                   heart.forEach(heart => {
                     if (heart.dataset.id == fave.punk_id -1){
