@@ -10,7 +10,7 @@ class Like {
         e.preventDefault();
 
         const newLike = {
-          punk_id: e.target.dataset.id,
+          punk_id: parseInt(e.target.dataset.id) +1,
           user_id: user.id,
           count: true,
         };

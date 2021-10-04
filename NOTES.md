@@ -5,7 +5,7 @@ Project build notes
 [ ] Updated Video of development work since submitted
 
 #FIND A PUNK
-Can get the punk by number from the API call and render to the dom, but doesn't persist. When I attached the event listener to the Punks in the nav bar, it is not displaying the new object, because...it is not being added to the Punks index?
+Can get the punk by number from the API call and render to the dom, but doesn't persist. When I attached the event listener to the Punks in the nav bar, it is not displaying the new object, because...it is not being added to the Punks index/and or not defined in a route. Have to create a new array with the found punks for that user.
 
 
 #COMMENTS-
