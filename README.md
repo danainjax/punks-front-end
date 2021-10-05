@@ -4,16 +4,27 @@ Front end for crypto punks vanilla JS application
 
 Back end can be found at github.com/danainjax/punks-api
 
-'punks' is a vanilla javascript application on the front end. A punk is a visual representation of the popular CryptoPunks, the World's first NFT's, non-fungible tokens, first on the blockchain art on Ethereum. This project combines rendering the images of those NFTs and their attributes, the ability to search for a punk by its number (there are over 10,000), a way to 'comment' and 'like' a punk, and coming soon a way to simulate a contract or sale. This project combines features of social media, with basic sale functionality and search.
+'punks' is a vanilla javascript application on the front end. A punk is a visual representation of the popular CryptoPunks, the World's first NFT's, non-fungible tokens, first on the blockchain art on Ethereum. This project combines rendering the images of those NFTs and their attributes, the ability to search for a punk by its number (there are over 10,000), a way to 'comment' and 'like' a punk, and coming soon a way to simulate a contract or sale. You can search a 'Punk By Number', too. This project combines features of social media, and was a useful tool in learning JavaScript.
 
 Built with:
+JavaScript, CSS, Ruby on Rails, and a lot of early mornings.
 
 Deployment - Dependencies
+Grab the back end repo and clone it down to your machine.
 
-Author
+Run rails db:create
+rails db: seed
+rails s
 
-License
+Clone this front end repo and run index.html with live server or by open index.html in the console
 
-Acknowledgements
+Author:
+Dana Pughakoff
+
+License:
+Open Source through MIT License (See LICENSE file)
+
+Acknowledgements:
+Larva Labs for inspiration, as well as Gabriel Hicks for his REST API full of Punk details.
 
 ![CryptoPunks](./assets/images/allPunks.png)

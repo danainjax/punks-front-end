@@ -5,7 +5,7 @@ Project build notes
 [ ] Updated Video of development work since submitted
 
 #FIND A PUNK
-Can get the punk by number from the API call and render to the dom, but doesn't persist. When I attached the event listener to the Punks in the nav bar, it is not displaying the new object, because...it is not being added to the Punks index/and or not defined in a route. Have to create a new array with the found punks for that user.
+    For further development, save to User account as a favorite.
 
 
 #COMMENTS-
@@ -57,10 +57,10 @@ User data is wiped when page refreshes, fix that, and persist current user in db
 
     api.PunkByNumber(punkId)
 
-[ ] 6. U - update/edit a comment, like, or sale?
-[ ] 7. D - delete a comment, like
+[X] 7. D - delete a comment
+    api.api.deleteComment(deleteId)
 
-STRETCH GOAL:
+For Further Development:
 [ ]    Create a Contract/Sale
 
 B. MODELS
@@ -102,9 +102,9 @@ Requirements:
 
 [X] The backend and frontend must collaborate to demonstrate Client-Server Communication. Your application should have at least 3 AJAX calls, covering at least 2 of Create, Read, Update, and Delete (CRUD). Your client-side JavaScript code must use fetch with the appropriate HTTP verb, and your Rails API should use RESTful conventions.
 
-    *See Fetch calls above
+    *See Fetch calls above (Create Like, Create User, Read Punk, Create Comment, Read PunkById, Delete Comment)
 
 JavaScript
 [X] Use classes and functions to organize your code into reusable pieces.
 [X] Translate JSON responses into JavaScript model objects using ES6 class or constructor function syntax.
-[ ] Use ES6 features when appropriate (e.g. arrow functions, let & const, rest and spread syntax).
+[X] Use ES6 features when appropriate (e.g. arrow functions, let & const, rest and spread syntax).

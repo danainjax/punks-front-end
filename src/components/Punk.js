@@ -119,14 +119,19 @@ class Punk {
     Comment.showForm();
 
     // this.renderShow()
-    this.comments.forEach((comment) => comment.render());
+    this.comments.forEach((comment) => {
+      comment.render()
+     
+    })
+    
 
     const back = document.getElementById("back");
     back.addEventListener("click", (e) => {
       e.preventDefault();
       Punk.renderIndex();
     });
-  };
+  }
+
 
   // static renderCommentData = () => {
   //   const { id, punktype, image, accessories, comments } = this;

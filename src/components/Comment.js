@@ -40,7 +40,8 @@ class Comment {
       };
 
       api.createComment(newComment).then((comment) => {
-        this.handleComment(comment);
+        this.handleComment(comment)
+        // this.render(comment)
         User.all[0].comments.push(comment)
         Punk.all = [];
         api.fetchPunks().then((punks) => {
@@ -51,13 +52,33 @@ class Comment {
     });
   }
 
+  
+
   render = (comment) => {
-    const { id, text, user_id } = this.data;
+    const { id, text, user_id} = this.data;
+    const punk = this.punk
     document.querySelector(".container").innerHTML += `
     <div class="card">
-      <p>${text}</p>
-    </div>`;
-  };
+      <p data-punk=${parseInt(this.punk.id-1)} data-id=${id} >${text} <button id="delete-comment" data-punk=${parseInt(this.punk.id)-1} data-id=${id}>X</button></p> 
+    </div>`
+      const deleteButtons = Array.from(document.querySelectorAll('#delete-comment'))
+      deleteButtons.forEach( deleteButton => {
+        deleteButton.addEventListener('click', (e) => {
+          const commentToDelete = e.target.closest('p')
+          const deleteId = commentToDelete.dataset.id
+          commentToDelete.style.display="none"
+          api.deleteComment(deleteId)
+
+        })
+      })
+    }
+    
+    
+    
+     
+  
+
+  
 
   static handleComment = (comment) => {
     new Comment(comment);
@@ -67,4 +88,5 @@ class Comment {
     </div>`;
     document.querySelector("form").reset();
   };
+
 }
