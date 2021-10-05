@@ -149,16 +149,21 @@ class Punk {
     document.getElementById("find-punk").addEventListener("submit", (e) => {
       e.preventDefault();
       let punkId = e.target.number.value;
-      console.log(punkId);
       modal.close();
       Punk.all = [];
       punkId = parseInt(punkId) + 1;
-      api.PunkByNumber(punkId).then((punk) => new Punk(punk));
+      api.PunkByNumber(punkId).then(punk => {
+        // punk.user = user
+        // console.log(punk.user)
+        new Punk(punk)
+      })
       clear();
       modal.main.innerHTML = "";
 
       this.getPunks();
       //  modal.main.innerHTML = ""
-    });
-  };
+    ;
+  });
+
+  }
 }
