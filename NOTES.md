@@ -4,9 +4,11 @@ Before review:
 
 1. Add X button to delete a comment when rendering comment to the front end
 
-2. Back button is not refreshing the comments, need to make the back button work the same as Punks event listener
+2. Make the Likes stay within the User modal on the Account page
 
-3. Don't let the comment box appear more than once, check what event we are listening for
+3. Back button is not refreshing the comments, need to make the back button work the same as Punks event listener
+
+4. Don't let the comment box appear more than once, check what event we are listening for
 
 
 [ ] Update Readmes on both repos for assessment
@@ -17,17 +19,17 @@ Before review:
     For further development, save to User account as a favorite.
 
 
-#COMMENTS-
+<!-- #COMMENTS-
  For further development:
         Pseudo CODE:
         COMMENTS currently appear below the Punk info, move them to another HTML element after using a modal to enter a comment. Either use the back of the card or some element that slides out.
 [ ] When comments are added, instead of adding to bottom of show page, pop a modal or some other html element
-[ ] When you add the comments to the show view, flip the card over.
+[ ] When you add the comments to the show view, flip the card over. -->
 
 
 #USER-
 User data is wiped when page refreshes, fix that, and persist current user in db- started working on Session storage to fix this
-    [ ] Account page: Make sure comments are displaying, and any Punks that are liked/contracted
+    [X] Account page: Make sure comments are displaying, and any Punks that are liked
 
 #LIKES-
 [x] Increment likes based on click
@@ -78,7 +80,7 @@ B. MODELS
     [X] d. Ticker
     [X] e. Modal
     [X] f. Punk
-    [ ] d. Buy/Sell/Trade/Contract
+    <!-- [ ] d. Buy/Sell/Trade/Contract -->
     
 
 [X] C. Build an adpater/service class to handle the api calls.
@@ -86,13 +88,8 @@ B. MODELS
 [X] D. Hit MVP asap, then refactor and branch to add each new feature. One at a time.
 [X] E. Add a Navbar
 [X] F. Add API data to show current crypto prices, ETH, bitcoin, etc with graphic and #
-[ ] G. Add info pages, to show what CryptoPunks are and why they are important, define what a NFT is, etc. (Christie's article, NY Times article)
+<!-- [ ] G. Add info pages, to show what CryptoPunks are and why they are important, define what a NFT is, etc. (Christie's article, NY Times article) -->
 
-
-HTML
-[ ] 1. Modal - working on implementing with Comments and Contract
-[ ] 2. Flip card - need to solve for ability to flip when I want, not just all the time
-[X] 3. Nav bar
 
 Requirements:
 
