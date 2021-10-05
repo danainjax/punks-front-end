@@ -51,13 +51,13 @@ class ApiService {
   };
 
   //fetch 6, Delete a comment, Destroy in db, Delete
-  // deleteComment = (comment) => {
-  //     return fetch(this.api + `/comments/${id}`,{
-  //         method: 'DELETE',
-  //     })
-  //     .then(res => res.json()) // or res.json()
-  //     .then(data => console.log(data))
-  //     }
+  deleteComment = (deleteId) => {
+      return fetch(this.api + `/comments/${deleteId}`,{
+          method: 'DELETE',
+      })
+      .then(res => res.json()) 
+      .then(data => console.log(data))
+      }
 
   //fetch 7, Edit a comment
 
