@@ -1,5 +1,14 @@
 Project build notes
 
+Before review:
+
+1. Add X button to delete a comment when rendering comment to the front end
+
+2. Back button is not refreshing the comments, need to make the back button work the same as Punks event listener
+
+3. Don't let the comment box appear more than once, check what event we are listening for
+
+
 [ ] Update Readmes on both repos for assessment
 [ ] Another blog post
 [ ] Updated Video of development work since submitted
@@ -9,13 +18,12 @@ Project build notes
 
 
 #COMMENTS-
- Work on edit/update and delete functionality.
+ For further development:
         Pseudo CODE:
         COMMENTS currently appear below the Punk info, move them to another HTML element after using a modal to enter a comment. Either use the back of the card or some element that slides out.
 [ ] When comments are added, instead of adding to bottom of show page, pop a modal or some other html element
-
 [ ] When you add the comments to the show view, flip the card over.
-[ ] Don't let the comment box appear more than once, check what event we are listening for
+
 
 #USER-
 User data is wiped when page refreshes, fix that, and persist current user in db- started working on Session storage to fix this
