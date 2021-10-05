@@ -15,7 +15,6 @@ class Punk {
     api.fetchPunks().then((punks) => {
       punks.forEach((punk) => new Punk(punk));
       this.renderIndex();
-      
     });
   }
 
@@ -39,7 +38,9 @@ class Punk {
     const { id, punktype, image, accessories, comments, likes, user } = this;
 
     document.querySelector(".punk-container").innerHTML += `
-                  <div id="punk-card" class="punk-card" data-id=${parseInt(id)-1}>
+                  <div id="punk-card" class="punk-card" data-id=${
+                    parseInt(id) - 1
+                  }>
                       <div class="flip-card">
                           <div class="flip-card-inner">
                               <div class="flip-card-front">
@@ -47,7 +48,9 @@ class Punk {
                                   <p class ="likes" id="all-likes" data-id=${
                                     likes.length
                                   }> ${likes.length} likes</p>
-                                  <p class="likes" id="likes" data-id=${parseInt(id) -1}>♡</p>
+                                  <p class="likes" id="likes" data-id=${
+                                    parseInt(id) - 1
+                                  }>♡</p>
                                   <p class="punk-number"> Punk number ${parseInt(
                                     id - 1
                                   )}</p>
@@ -68,38 +71,29 @@ class Punk {
                     
                   </div>
                 </div>`;
-                const userFaves = User.all[0].data.likes
-                // console.log(userFaves)
-                userFaves.forEach( fave => {
-                  // console.log(fave.punk_id)
-                  const heart = Array.from(document.querySelectorAll('#likes'))
-                  heart.forEach(heart => {
-                    if (heart.dataset.id == fave.punk_id -1){
-                      heart.innerHTML = "❤️"
-                    }
-                  })
-                  
-                  
-                  
-                  }
-      
-                  )
-                  
-                }
-                
-                
+    const userFaves = User.all[0].data.likes;
+    // console.log(userFaves)
+    userFaves.forEach((fave) => {
+      // console.log(fave.punk_id)
+      const heart = Array.from(document.querySelectorAll("#likes"));
+      heart.forEach((heart) => {
+        if (heart.dataset.id == fave.punk_id - 1) {
+          heart.innerHTML = "❤️";
+        }
+      });
+    });
+  };
 
   static handleIndexClick = (e) => {
     e.preventDefault();
     if (
       e.target.tagName === "IMG" ||
       e.target.classList.contains("punk-number")
-    ){
+    ) {
       const id = e.target.closest("#punk-card").dataset.id;
-      this.find(parseInt(id) +1).renderShow();
-    } 
+      this.find(parseInt(id) + 1).renderShow();
     }
-  
+  };
 
   static find = (id) => this.all.find((punk) => punk.id == id);
 
@@ -108,7 +102,9 @@ class Punk {
     main.innerHTML = `
     <div class="show">
       <img src=${image} alt="punk" />
-      <h1 id="show" data-id =${parseInt(id) -1}> Punk number ${parseInt(id) -1}</h1>
+      <h1 id="show" data-id =${parseInt(id) - 1}> Punk number ${
+      parseInt(id) - 1
+    }</h1>
       <p class="punktype">${punktype}</p>
       <p class="accessories">${accessories}</p>
       <div class="container"></div>
@@ -117,21 +113,16 @@ class Punk {
     </div>
     `;
     Comment.showForm();
-
-    // this.renderShow()
     this.comments.forEach((comment) => {
-      comment.render()
-     
-    })
-    
+      comment.render();
+    });
 
     const back = document.getElementById("back");
     back.addEventListener("click", (e) => {
       e.preventDefault();
       Punk.renderIndex();
     });
-  }
-
+  };
 
   // static renderCommentData = () => {
   //   const { id, punktype, image, accessories, comments } = this;
@@ -157,18 +148,12 @@ class Punk {
       modal.close();
       Punk.all = [];
       punkId = parseInt(punkId) + 1;
-      api.PunkByNumber(punkId).then(punk => {
-        // punk.user = user
-        // console.log(punk.user)
-        new Punk(punk)
-      })
+      api.PunkByNumber(punkId).then((punk) => {
+        new Punk(punk);
+      });
       clear();
       modal.main.innerHTML = "";
-
       this.getPunks();
-      //  modal.main.innerHTML = ""
-    ;
-  });
-
-  }
+    });
+  };
 }

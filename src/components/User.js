@@ -40,23 +40,15 @@ class User {
               <h1> My comments </h1>`;
       let comments = user.comments.forEach((comment) => {
         modal.main.innerHTML += `
-                <p>${comment.text}, Punk Number: ${parseInt(comment.punk_id)-1}</p>
+                <p>${comment.text}, Punk Number: ${
+          parseInt(comment.punk_id) - 1
+        }</p>
                 `;
       });
-      modal.main.innerHTML += `<h1> My punks </h1>
-              `;
-      let punks = user.punks.forEach((punk) => {
-        if (user.username != "Larva Labs" || localStorage.currentLoggedIn) {
-          modal.main.innerHTML += `
-                  <p>${punk.id}</p>
-                  `;
-        }
+      modal.main.innerHTML += `<h1> My likes </h1>`;
+      let likes = user.likes.forEach((like) => {
+        modal.main.innerHTML += `<li> ${parseInt(like.punk_id) - 1} ❤️</li>`;
       });
-
-      modal.main.innerHTML += `<h1> My likes </h1>
-                `;
-
-      //  modal.close()
     } else {
       showLoginForm();
     }
