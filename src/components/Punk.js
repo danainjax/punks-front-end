@@ -75,7 +75,7 @@ class Punk {
                   const heart = Array.from(document.querySelectorAll('#likes'))
                   heart.forEach(heart => {
                     if (heart.dataset.id == fave.punk_id -1){
-                      heart.innerHTML = "🖤"
+                      heart.innerHTML = "❤️"
                     }
                   })
                   
