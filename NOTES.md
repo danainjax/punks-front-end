@@ -4,11 +4,9 @@ Before review:
 
 1. Add X button to delete a comment when rendering comment to the front end
 
-2. Make the Likes stay within the User modal on the Account page
+2. Back button is not refreshing the comments, need to make the back button work the same as Punks event listener
 
-3. Back button is not refreshing the comments, need to make the back button work the same as Punks event listener
-
-4. Don't let the comment box appear more than once, check what event we are listening for
+3. Don't let the comment box appear more than once, check what event we are listening for
 
 
 [ ] Update Readmes on both repos for assessment
