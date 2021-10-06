@@ -108,3 +108,15 @@ document.querySelector("#my-account").addEventListener("click", (e) => {
     showLoginForm();
   }
 });
+
+document.querySelector("#most-likes").addEventListener("click", (e) => {
+  e.preventDefault()
+  if (!user) {
+    showLoginForm();
+  } else{
+    api.mostLikes().then(data => {
+      const id = (data.id)
+      Punk.find(id).renderShow()
+  })
+  }
+})

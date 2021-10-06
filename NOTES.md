@@ -67,8 +67,11 @@ User data is wiped when page refreshes, fix that, and persist current user in db
 
     api.PunkByNumber(punkId)
 
-[X] 7. D - delete a comment
-    api.api.deleteComment(deleteId)
+[X] 6. D - delete a comment
+    api.deleteComment(deleteId)
+
+ [X]   7. R- Punk with the Most Likes 
+    api.mostLikes()
 
 For Further Development:
 [ ]    Create a Contract/Sale
