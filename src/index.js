@@ -117,6 +117,7 @@ document.querySelector("#most-likes").addEventListener("click", (e) => {
     api.mostLikes().then(data => {
       const id = (data.id)
       Punk.find(id).renderShow()
+      alert('We love this one!')
   })
   }
 })
