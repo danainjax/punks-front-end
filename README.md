@@ -8,7 +8,7 @@
 
 A punk is a visual representation of the popular CryptoPunks, the World's first NFT's, non-fungible tokens, first on the blockchain art on Ethereum. This project combines rendering the images of those NFTs and their attributes, the ability to search for a punk by its number (there are over 10,000), a way to 'comment' and 'like' a punk, and for further development a way to implement a contract.  
 
- This project combines features of social media, and was a useful tool in learning JavaScript. My business problem it solves was learning the language through hands-on building.   
+ This project combines features of social media, and was a useful tool in learning JavaScript. The business problem it solves was learning the language through hands-on building.   
 
 Built with:  
 
