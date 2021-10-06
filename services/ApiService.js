@@ -58,4 +58,9 @@ class ApiService {
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
+
+// fetch 7 , Punk with the most likes, Read
+mostLikes = () =>
+    fetch(this.api + '/fave').then(response => response.json())
+    
 }
