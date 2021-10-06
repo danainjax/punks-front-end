@@ -28,7 +28,9 @@ Grab the back end repo and clone it down to your machine.
 
 * `rails s`
 
-Clone this front end repo and run index.html with live server or by open index.html in the console
+Clone this front end repo and open index.html with live server   
+
+or by `open index.html` in the console
 
 Author: 
 
