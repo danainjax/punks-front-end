@@ -1,12 +1,5 @@
 Project build notes
 
-Before review:
-
-2. Back button is not refreshing the comments, need to make the back button work the same as Punks event listener
-
-3. Don't let the comment box appear more than once, check what event we are listening for
-
-
 [ ] Update Readmes on both repos for assessment
 [ ] Another blog post
 [ ] Updated Video of development work since submitted
@@ -84,9 +77,13 @@ B. MODELS
 [X] E. Add a Navbar
 [X] F. Add API data to show current crypto prices, ETH, bitcoin, etc with graphic and #
 <!-- [ ] G. Add info pages, to show what CryptoPunks are and why they are important, define what a NFT is, etc. (Christie's article, NY Times article) -->
+<!-- For further development/build list
 
+1. Back button is not refreshing the comments, need to make the back button work the same as Punks event listener
 
-Requirements:
+2. Don't let the comment box appear more than once, check what event we are listening for
+
+Requirements: -->
 
 [X] The application must be an HTML, CSS, and JavaScript frontend with a Rails API backend. All interactions between the client and the server must be handled asynchronously (AJAX) and use JSON as the communication format.
 

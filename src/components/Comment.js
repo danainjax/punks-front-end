@@ -40,54 +40,60 @@ class Comment {
       };
 
       api.createComment(newComment).then((comment) => {
-        
-        User.all[0].comments.push(comment)
-        const thisPunk = (comment.punk_id)
-        Punk.find(thisPunk).comments.push(comment)
-        new Comment(comment)
-        console.log(this)
-        this.handleComment(comment)
-        
+        User.all[0].comments.push(comment);
+        const thisPunk = comment.punk_id;
+        Punk.find(thisPunk).comments.push(comment);
+        new Comment(comment);
+        this.handleComment(comment);
       });
     });
   }
 
-  
-
   render = (comment) => {
-    const { id, text, user_id} = this.data;
-    const punk = this.punk
+    const { id, text, user_id } = this.data;
+    const punk = this.punk;
     document.querySelector(".container").innerHTML += `
     <div class="card">
-      <p data-punk=${parseInt(this.punk.id-1)} data-id=${id} >${text} <button id="delete-comment" data-punk=${parseInt(this.punk.id)-1} data-id=${id}>X</button></p> 
-    </div>`
-      const deleteButtons = Array.from(document.querySelectorAll('#delete-comment'))
-      deleteButtons.forEach( deleteButton => {
-        deleteButton.addEventListener('click', (e) => {
-          const commentToDelete = e.target.closest('p')
-          const deleteId = commentToDelete.dataset.id
-          commentToDelete.style.display="none"
-          api.deleteComment(deleteId)
+      <p data-punk=${parseInt(
+        this.punk.id - 1
+      )} data-id=${id} >${text} <button id="delete-comment" data-punk=${
+      parseInt(this.punk.id) - 1
+    } data-id=${id}>X</button></p> 
+    </div>`;
+    const deleteButtons = Array.from(
+      document.querySelectorAll("#delete-comment")
+    );
+    deleteButtons.forEach((deleteButton) => {
+      deleteButton.addEventListener("click", (e) => {
+        const commentToDelete = e.target.closest("p");
+        const deleteId = commentToDelete.dataset.id;
+        commentToDelete.style.display = "none";
+        api.deleteComment(deleteId);
+      });
+    });
+  };
 
-        })
-      })
-    }
-    
   static handleComment = (comment) => {
-    console.log(comment)
+    console.log(comment);
     document.querySelector(".container").innerHTML += `
     <div class="card">
-    <p data-punk=${parseInt(comment.punk_id-1)} data-id=${comment.id} >${comment.text} <button id="delete-comment" data-punk=${parseInt(comment.punk_id)-1} data-id=${comment.id}>X</button></p> 
-    </div>`
-      const deleteButtons = Array.from(document.querySelectorAll('#delete-comment'))
-      deleteButtons.forEach( deleteButton => {
-        deleteButton.addEventListener('click', (e) => {
-          const commentToDelete = e.target.closest('p')
-          const deleteId = commentToDelete.dataset.id
-          commentToDelete.style.display="none"
-          api.deleteComment(deleteId)
+    <p data-punk=${parseInt(comment.punk_id - 1)} data-id=${comment.id} >${
+      comment.text
+    } <button id="delete-comment" data-punk=${
+      parseInt(comment.punk_id) - 1
+    } data-id=${comment.id}>X</button></p> 
+    </div>`;
     document.querySelector("form").reset();
-      })
-    })
-  }
+    const deleteButtons = Array.from(
+      document.querySelectorAll("#delete-comment")
+    );
+    deleteButtons.forEach((deleteButton) => {
+      deleteButton.addEventListener("click", (e) => {
+        const commentToDelete = e.target.closest("p");
+        const deleteId = commentToDelete.dataset.id;
+        commentToDelete.style.display = "none";
+        api.deleteComment(deleteId);
+      });
+    });
+  };
 }

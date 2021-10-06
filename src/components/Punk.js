@@ -122,7 +122,6 @@ class Punk {
     });
   };
 
-
   static punkByNumberForm = () => {
     modal.main.innerHTML += `
   <form id="find-punk">
