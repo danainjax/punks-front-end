@@ -40,10 +40,13 @@ class Comment {
       };
 
       api.createComment(newComment).then((comment) => {
-        this.handleComment(comment)
+        
         User.all[0].comments.push(comment)
         const thisPunk = (comment.punk_id)
         Punk.find(thisPunk).comments.push(comment)
+        new Comment(comment)
+        console.log(this)
+        this.handleComment(comment)
         
       });
     });
@@ -70,20 +73,21 @@ class Comment {
       })
     }
     
-    
-    
-     
-  
-
-  
-
   static handleComment = (comment) => {
-    new Comment(comment);
+    console.log(comment)
     document.querySelector(".container").innerHTML += `
     <div class="card">
-      <p>${comment.text}</p>
-    </div>`;
+    <p data-punk=${parseInt(comment.punk_id-1)} data-id=${comment.id} >${comment.text} <button id="delete-comment" data-punk=${parseInt(comment.punk_id)-1} data-id=${comment.id}>X</button></p> 
+    </div>`
+      const deleteButtons = Array.from(document.querySelectorAll('#delete-comment'))
+      deleteButtons.forEach( deleteButton => {
+        deleteButton.addEventListener('click', (e) => {
+          const commentToDelete = e.target.closest('p')
+          const deleteId = commentToDelete.dataset.id
+          commentToDelete.style.display="none"
+          api.deleteComment(deleteId)
     document.querySelector("form").reset();
-  };
-
+      })
+    })
+  }
 }

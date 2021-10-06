@@ -2,8 +2,6 @@ Project build notes
 
 Before review:
 
-1. Add X button to delete a comment when rendering comment to the front end
-
 2. Back button is not refreshing the comments, need to make the back button work the same as Punks event listener
 
 3. Don't let the comment box appear more than once, check what event we are listening for

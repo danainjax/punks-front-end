@@ -122,15 +122,6 @@ class Punk {
     });
   };
 
-  // static renderCommentData = () => {
-  //   const { id, punktype, image, accessories, comments } = this;
-  //   console.log(comments);
-
-  //   document.querySelector(".container").innerHTML += `
-  //     <div class="card">
-  //       <p>${comment.text}</p>
-  //     </div>`;
-  // };
 
   static punkByNumberForm = () => {
     modal.main.innerHTML += `
