@@ -2,7 +2,7 @@
 ![CryptoPunks](./assets/images/1660.PNG)
 ## Front end for CryptoPunks vanilla JS application
 
-## Back end can be found at [github.com/danainjax/punks-api](github.com/danainjax/punks-api)
+## Back end can be found at [https://github.com/danainjax/punks-rails-api](https://github.com/danainjax/punks-rails-api)
 
 'punks' is a vanilla javascript application on the front end.   
 
@@ -20,7 +20,7 @@ Deployment - Dependencies
 
 Grab the back end repo and clone it down to your machine.
 
-[github.com/danainjax/punks-api](github.com/danainjax/punks-api)
+[https://github.com/danainjax/punks-rails-api](https://github.com/danainjax/punks-rails-api)
 
 * Run `rails db:create`  
 
