@@ -20,13 +20,12 @@ class Like {
         new Like(like);
         api.createLike(newLike).then((resp) => {
           User.all[0].likes.push(resp);
-          Punk.all = [];
-          api.fetchPunks().then((punks) => {
-            punks.forEach((punk) => new Punk(punk));
+          const thisPunk = Punk.find(resp.punk_id)
+          thisPunk.likes.push(like)
             Punk.renderIndex();
           });
         });
-      });
+      };
     }
   };
-}
+
