@@ -41,12 +41,9 @@ class Comment {
 
       api.createComment(newComment).then((comment) => {
         this.handleComment(comment)
-        // this.render(comment)
         User.all[0].comments.push(comment)
-        Punk.all = [];
-        api.fetchPunks().then((punks) => {
-          punks.forEach((punk) => new Punk(punk));
-        });
+        const thisPunk = (comment.punk_id)
+        Punk.find(thisPunk).comments.push(comment)
         
       });
     });
