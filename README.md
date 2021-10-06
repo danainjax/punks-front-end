@@ -1,5 +1,5 @@
 # punks-front-end
-
+![CryptoPunks](./assets/images/1660.PNG)
 ## Front end for CryptoPunks vanilla JS application
 
 ## Back end can be found at [github.com/danainjax/punks-api](github.com/danainjax/punks-api)
@@ -12,7 +12,8 @@ A punk is a visual representation of the popular CryptoPunks, the World's first 
 
 Built with:  
 
-JavaScript, CSS, Ruby on Rails, and a lot of early mornings.    
+JavaScript, CSS, Ruby on Rails, and a lot of early mornings.   
+
 ![DevFuel](assets/images/SnowWhite.jpeg)
 
 Deployment - Dependencies  
@@ -29,8 +30,9 @@ Grab the back end repo and clone it down to your machine.
 
 Clone this front end repo and run index.html with live server or by open index.html in the console
 
-Author:
-Dana Pughakoff
+Author: 
+
+*Dana Pughakoff*
 
 License:
 Open Source through MIT License (See LICENSE file)
@@ -38,4 +40,4 @@ Open Source through MIT License (See LICENSE file)
 Acknowledgements:
 Larva Labs for inspiration, as well as Gabriel Hicks for his REST API full of Punk details.
 
-![CryptoPunks](./assets/images/1660.PNG)
+
