@@ -13,8 +13,8 @@ Before review:
 [ ] Another blog post
 [ ] Updated Video of development work since submitted
 
-#FIND A PUNK
-    For further development, save to User account as a favorite.
+<!-- #FIND A PUNK
+    For further development, save to User account as a favorite. -->
 
 
 <!-- #COMMENTS-
@@ -24,10 +24,6 @@ Before review:
 [ ] When comments are added, instead of adding to bottom of show page, pop a modal or some other html element
 [ ] When you add the comments to the show view, flip the card over. -->
 
-
-#USER-
-User data is wiped when page refreshes, fix that, and persist current user in db- started working on Session storage to fix this
-    [X] Account page: Make sure comments are displaying, and any Punks that are liked
 
 #LIKES-
 [x] Increment likes based on click
@@ -71,8 +67,8 @@ User data is wiped when page refreshes, fix that, and persist current user in db
  [X]   7. R- Punk with the Most Likes 
     api.mostLikes()
 
-For Further Development:
-[ ]    Create a Contract/Sale
+<!-- For Further Development:
+[ ]    Create a Contract/Sale -->
 
 B. MODELS
     [X] a.  ***Comments - currently working on Comments

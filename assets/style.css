@@ -169,18 +169,20 @@ img {
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px 20px 100px 20px;
+  padding: 20px 20px 20px 20px;
   border: 1px solid #888;
   width: 80%;
-  font-size: 20px;;
+  font-size: 20px;
+  display: flex;
+  flex-direction:column;
    /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
 .close {
   color: #aaa;
-  float: right;
-  font-size: 28px;
+  text-align: right;
+  font-size: 50px;
   font-weight: bold;
 }
 
