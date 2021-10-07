@@ -43,21 +43,21 @@ class Comment {
         User.all[0].comments.push(comment);
         const thisPunk = comment.punk_id;
         Punk.find(thisPunk).comments.push(comment);
-        new Comment(comment);
-        this.handleComment(comment);
+        document.querySelector("form").reset();
+        const commentInstance = new Comment(comment)
+        commentInstance.render()
       });
     });
   }
 
-  render = (comment) => {
-    const { id, text, user_id } = this.data;
-    const punk = this.punk;
+  render = () => {
+    const { id, text, user_id, punkId } = this.data;
     document.querySelector(".container").innerHTML += `
     <div class="card">
       <p data-punk=${parseInt(
-        this.punk.id - 1
+        punkId - 1
       )} data-id=${id} >${text} <button id="delete-comment" data-punk=${
-      parseInt(this.punk.id) - 1
+      parseInt(punkId) - 1
     } data-id=${id}>X</button></p> 
     </div>`;
     const deleteButtons = Array.from(
@@ -73,27 +73,27 @@ class Comment {
     });
   };
 
-  static handleComment = (comment) => {
-    console.log(comment);
-    document.querySelector(".container").innerHTML += `
-    <div class="card">
-    <p data-punk=${parseInt(comment.punk_id - 1)} data-id=${comment.id} >${
-      comment.text
-    } <button id="delete-comment" data-punk=${
-      parseInt(comment.punk_id) - 1
-    } data-id=${comment.id}>X</button></p> 
-    </div>`;
-    document.querySelector("form").reset();
-    const deleteButtons = Array.from(
-      document.querySelectorAll("#delete-comment")
-    );
-    deleteButtons.forEach((deleteButton) => {
-      deleteButton.addEventListener("click", (e) => {
-        const commentToDelete = e.target.closest("p");
-        const deleteId = commentToDelete.dataset.id;
-        commentToDelete.style.display = "none";
-        api.deleteComment(deleteId);
-      });
-    });
-  };
+  // static handleComment = (comment) => {
+  //   console.log(comment);
+  //   document.querySelector(".container").innerHTML += `
+  //   <div class="card">
+  //   <p data-punk=${parseInt(comment.punk_id - 1)} data-id=${comment.id} >${
+  //     comment.text
+  //   } <button id="delete-comment" data-punk=${
+  //     parseInt(comment.punk_id) - 1
+  //   } data-id=${comment.id}>X</button></p> 
+  //   </div>`;
+  //   document.querySelector("form").reset();
+  //   const deleteButtons = Array.from(
+  //     document.querySelectorAll("#delete-comment")
+  //   );
+  //   deleteButtons.forEach((deleteButton) => {
+  //     deleteButton.addEventListener("click", (e) => {
+  //       const commentToDelete = e.target.closest("p");
+  //       const deleteId = commentToDelete.dataset.id;
+  //       commentToDelete.style.display = "none";
+  //       api.deleteComment(deleteId);
+  //     });
+  //   });
+  // };
 }
