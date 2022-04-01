@@ -6,54 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/style.css" />
     <script src="./src/components/User.js" defer></script>
-    <script src="./src/components/Ticker.js" defer ></script>
+    <script src="./src/components/Ticker.js" defer></script>
     <script src="./services/ApiService.js" defer></script>
     <script src="./src/components/Punk.js" defer></script>
     <script src="./src/components/Modal.js" defer></script>
     <script src="./src/index.js" defer></script>
-    
-    
-   
+
     <script src="./src/components/Like.js" defer></script>
     <script src="./src/components/Comment.js" defer></script>
     <title>punks</title>
+    <meta name="description" content="punks" />
+    <meta name="title" property="og:title" content="punks" />
+    <meta property="og:type" content="website" />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://github.com/danainjax/punks-front-end/blob/master/assets/images/p_icon.jpg"
+    />
+    <meta name="description" property="og:description" content="punks" />
+    <meta name="author" content="Dana Pughakoff" />
   </head>
   <body>
     <ul>
       <li><a class="active" id="my-account" href="#home">My Account</a></li>
       <li><a href="#" id="login">Login</a></li>
-      <li><a href="#" id= "dark-theme">Light/Dark</a></li>
-      <li><a href="#" id ="get-punks">Punks</a></li>
+      <li><a href="#" id="dark-theme">Light/Dark</a></li>
+      <li><a href="#" id="get-punks">Punks</a></li>
       <li><a href="#" id="find-a-punk">Find A Punk By Number</a></li>
       <li><a href="#" id="most-likes">Most Likes</a></li>
       <!-- <li><a href="#" id="contract-a-punk">Contract a Punk</a></li> -->
       <li><a href="#" id="logout">Logout</a></li>
-      
     </ul>
-    
-    
+
     <div class="ticker"></div>
-    
-    
 
-      <!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div id="modal-main"></div>
-  </div>
-
-  </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-main"></div>
+      </div>
+    </div>
 
     <div id="main">
       <h2>PUNKS</h2>
-      <img src="assets/images/allPunks.png"/>
-      
+      <img src="assets/images/allPunks.png" />
     </div>
-      <div id="cryptopunks"></div>
-    
-    
+    <div id="cryptopunks"></div>
   </body>
 </html>
